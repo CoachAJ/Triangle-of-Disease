@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Page - Triangle of Disease</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 { color: #0068B3; }
+    h2 { color: #3CAADF; }
+    .btn {
+      display: inline-block;
+      background: #F58A34;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Triangle of Disease Test Page</h1>
+  <p>If you can see this page, the basic HTML hosting is working.</p>
+  
+  <div class="card">
+    <h2>Diagnostics</h2>
+    <p>This page is a static HTML file served from the public directory.</p>
+    <p>If this loads but the main site doesn't, the issue is likely with:</p>
+    <ul>
+      <li>JavaScript loading/execution</li>
+      <li>React application initialization</li>
+      <li>Asset path references</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h2>Next Steps</h2>
+    <p>Try accessing the following pages to further diagnose:</p>
+    <ul>
+      <li><a href="/">Home Page (Root)</a></li>
+      <li><a href="/index.html">Direct Index HTML</a></li>
+      <li><a href="/#/">Hash Router Home</a></li>
+    </ul>
+    <a href="/" class="btn">Return to Homepage</a>
+  </div>
+
+  <script>
+    // Simple script to show if JavaScript is working
+    document.write('<div class="card"><h2>JavaScript is Working</h2><p>This text was added via JavaScript, which means client-side scripts can execute.</p></div>');
+    
+    // Log browser info
+    console.log('Navigator info:', {
+      userAgent: navigator.userAgent,
+      language: navigator.language,
+      platform: navigator.platform
+    });
+    
+    // Log current URL information
+    console.log('URL info:', {
+      href: window.location.href,
+      origin: window.location.origin,
+      pathname: window.location.pathname,
+      hash: window.location.hash
+    });
+  </script>
+</body>
+</html>

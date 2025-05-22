@@ -1,0 +1,12 @@
+# Netlify redirects file
+
+# Redirect domain aliases to primary domain
+http://triangleofdisease.com/* https://triangleofdisease.netlify.app/:splat 301!
+https://triangleofdisease.com/* https://triangleofdisease.netlify.app/:splat 301!
+
+# SPA fallback (Single Page Application handling)
+/* /index.html 200
+
+# Optional: Redirect old URLs to new URLs if needed
+# /old-path /new-path 301
+# /legacy/* /new-structure/:splat 301

@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./fonts/proxima-nova.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-montserrat text-gray-800;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-proxima font-bold;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl mb-6;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl mb-5;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl mb-4;
+  }
+  
+  p {
+    @apply mb-4 leading-relaxed;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-md font-semibold transition-all duration-300 inline-block;
+  }
+  
+  .btn-primary {
+    @apply bg-health-blue text-white hover:bg-blue-sky;
+  }
+  
+  .btn-secondary {
+    @apply bg-glorious-sunset text-white hover:bg-tangy-yellow hover:text-gray-800;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-4 py-8 md:py-12;
+  }
+  
+  .triangle-point {
+    @apply flex flex-col items-center p-6 md:p-8 rounded-lg transition-all duration-300;
+  }
+  
+  .section-title {
+    @apply text-center mb-12;
+  }
+  
+  .section-title h2 {
+    @apply relative inline-block;
+  }
+  
+  .section-title h2:after {
+    content: '';
+    @apply absolute left-1/4 -bottom-3 w-1/2 h-1 bg-gradient-to-r from-health-blue to-glorious-sunset rounded-full;
+  }
+}
