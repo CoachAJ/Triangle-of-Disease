@@ -27,9 +27,9 @@ const AdrenalThyroidPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <img 
-                src="/assets/adrenal-thyroid-diagram.jpg" 
+                src="/ChatGPT Adrenal Thyroid.png" 
                 alt="Adrenal-Thyroid Complex Diagram" 
-                className="rounded-lg shadow-xl"
+                className="rounded-lg shadow-xl w-full"
               />
               <div className="absolute -bottom-6 -left-6 bg-tangy-yellow text-gray-800 p-4 rounded-lg shadow-lg transform rotate-3 hidden md:block">
                 <p className="font-proxima font-bold">Point 3 of the Triangle</p>

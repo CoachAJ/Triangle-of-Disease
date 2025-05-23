@@ -49,9 +49,9 @@ const BloodSugarPage = () => {
             </div>
             <div className="order-1 lg:order-2 relative">
               <img 
-                src="/assets/blood-sugar-diagram.jpg" 
-                alt="Blood Sugar System Diagram" 
-                className="rounded-lg shadow-xl"
+                src="/ChatGPT Blood Sugar.png"
+                alt="Blood Sugar System Diagram"
+                className="rounded-lg shadow-xl w-full"
               />
               <div className="absolute -bottom-6 -left-6 bg-blue-sky text-white p-4 rounded-lg shadow-lg transform -rotate-3 hidden md:block">
                 <p className="font-proxima font-bold">Point 2 of the Triangle</p>

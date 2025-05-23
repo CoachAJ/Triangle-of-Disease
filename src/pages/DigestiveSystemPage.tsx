@@ -25,6 +25,16 @@ const DigestiveSystemPage = () => {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative order-2 lg:order-1">
+              <img 
+                src="/ChatGPT Digestive system.png" 
+                alt="Digestive System Diagram" 
+                className="rounded-lg shadow-xl w-full"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-glorious-sunset text-white p-4 rounded-lg shadow-lg transform -rotate-3 hidden md:block">
+                <p className="font-proxima font-bold">Point 1 of the Triangle</p>
+              </div>
+            </div>
             <div>
               <h2 className="text-glorious-sunset mb-6">The Cornerstone of Health</h2>
               <p className="mb-4 text-lg">
