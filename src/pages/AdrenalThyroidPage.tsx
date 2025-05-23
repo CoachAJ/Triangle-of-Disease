@@ -29,10 +29,11 @@ const AdrenalThyroidPage = () => {
               <img 
                 src="/adrenal-thyroid.png" 
                 alt="Adrenal-Thyroid Complex Diagram" 
-                className="rounded-lg shadow-xl w-full"
+                className="rounded-lg shadow-xl max-w-md mx-auto lg:mx-0"
+                style={{ maxHeight: '300px', objectFit: 'contain' }}
               />
-              <div className="absolute -bottom-6 -left-6 bg-tangy-yellow text-gray-800 p-4 rounded-lg shadow-lg transform rotate-3 hidden md:block">
-                <p className="font-proxima font-bold">Point 3 of the Triangle</p>
+              <div className="absolute -bottom-6 -left-6 bg-tangy-yellow text-gray-800 p-2 rounded-lg shadow-lg transform rotate-3 hidden md:block">
+                <p className="font-proxima font-bold text-sm">Point 3 of the Triangle</p>
               </div>
             </div>
             <div>
