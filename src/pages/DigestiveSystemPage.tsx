@@ -27,7 +27,7 @@ const DigestiveSystemPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 lg:order-1">
               <img 
-                src="/ChatGPT Digestive system.png" 
+                src="/digestive-system.png" 
                 alt="Digestive System Diagram" 
                 className="rounded-lg shadow-xl w-full"
               />

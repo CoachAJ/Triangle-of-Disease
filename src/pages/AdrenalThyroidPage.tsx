@@ -27,7 +27,7 @@ const AdrenalThyroidPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <img 
-                src="/ChatGPT Adrenal Thyroid.png" 
+                src="/adrenal-thyroid.png" 
                 alt="Adrenal-Thyroid Complex Diagram" 
                 className="rounded-lg shadow-xl w-full"
               />

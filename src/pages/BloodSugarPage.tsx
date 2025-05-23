@@ -49,7 +49,7 @@ const BloodSugarPage = () => {
             </div>
             <div className="order-1 lg:order-2 relative">
               <img 
-                src="/ChatGPT Blood Sugar.png"
+                src="/blood-sugar.png"
                 alt="Blood Sugar System Diagram"
                 className="rounded-lg shadow-xl w-full"
               />
