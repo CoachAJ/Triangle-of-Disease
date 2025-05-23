@@ -13,7 +13,7 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center mb-4">
               <img 
-                src="/assets/logo-footer.png" 
+                src="/logo-footer.png" 
                 alt="Daily with Doc & Becca"
                 className="h-10" 
               />

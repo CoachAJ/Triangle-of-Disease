@@ -53,7 +53,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img
-            src="/assets/logo-header.png"
+            src="/logo-header.png"
             alt="Daily with Doc & Becca"
             className="h-10 md:h-12"
           />
