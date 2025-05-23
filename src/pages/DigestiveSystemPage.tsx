@@ -25,16 +25,13 @@ const DigestiveSystemPage = () => {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <div className="flex flex-col-reverse lg:flex-row gap-12 items-center">
-            <div className="relative w-full lg:w-2/5">
+            <div className="w-full lg:w-2/5">
               <img 
                 src="/digestive-system.png" 
                 alt="Digestive System Diagram" 
                 className="rounded-lg shadow-xl mx-auto"
-                style={{ maxHeight: '400px', objectFit: 'contain' }}
+                style={{ maxHeight: '500px', objectFit: 'contain', width: '100%' }}
               />
-              <div className="absolute -bottom-6 -right-6 bg-glorious-sunset text-white p-2 rounded-lg shadow-lg transform -rotate-3 hidden md:block">
-                <p className="font-proxima font-bold text-sm">Point 1 of the Triangle</p>
-              </div>
             </div>
             <div className="w-full lg:w-3/5">
               <h2 className="text-glorious-sunset mb-6">The Cornerstone of Health</h2>

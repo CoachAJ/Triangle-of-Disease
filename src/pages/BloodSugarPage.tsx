@@ -47,16 +47,13 @@ const BloodSugarPage = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-2/5 relative">
+            <div className="w-full lg:w-2/5">
               <img 
                 src="/blood-sugar.png"
                 alt="Blood Sugar System Diagram"
                 className="rounded-lg shadow-xl mx-auto"
-                style={{ maxHeight: '400px', objectFit: 'contain' }}
+                style={{ maxHeight: '500px', objectFit: 'contain', width: '100%' }}
               />
-              <div className="absolute -bottom-6 -left-6 bg-blue-sky text-white p-2 rounded-lg shadow-lg transform -rotate-3 hidden md:block">
-                <p className="font-proxima font-bold text-sm">Point 2 of the Triangle</p>
-              </div>
             </div>
           </div>
         </div>
