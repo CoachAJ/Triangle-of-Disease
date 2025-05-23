@@ -1,7 +1,8 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { GiStomach, GiMedicines } from 'react-icons/gi'
-import { FaListUl, FaClipboardCheck, FaExclamationTriangle } from 'react-icons/fa'
+import { FaListUl, FaClipboardCheck, FaExclamationTriangle, FaStethoscope } from 'react-icons/fa'
+import { MdBloodtype } from 'react-icons/md'
 import HeroSection from '../components/HeroSection'
 import InfoCard from '../components/InfoCard'
 

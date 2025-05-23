@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FaPlus, FaTrash, FaDownload, FaSave, FaPrint } from 'react-icons/fa'
+import { FaPlus, FaTrash, FaDownload, FaPrint } from 'react-icons/fa'
 
 interface FoodEntry {
   id: string
