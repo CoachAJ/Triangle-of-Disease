@@ -24,19 +24,19 @@ const AdrenalThyroidPage = () => {
       {/* Introduction Section */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
+            <div className="w-full lg:w-2/5 relative">
               <img 
                 src="/adrenal-thyroid.png" 
                 alt="Adrenal-Thyroid Complex Diagram" 
-                className="rounded-lg shadow-xl max-w-md mx-auto lg:mx-0"
-                style={{ maxHeight: '300px', objectFit: 'contain' }}
+                className="rounded-lg shadow-xl mx-auto"
+                style={{ maxHeight: '400px', objectFit: 'contain' }}
               />
               <div className="absolute -bottom-6 -left-6 bg-tangy-yellow text-gray-800 p-2 rounded-lg shadow-lg transform rotate-3 hidden md:block">
                 <p className="font-proxima font-bold text-sm">Point 3 of the Triangle</p>
               </div>
             </div>
-            <div>
+            <div className="w-full lg:w-3/5">
               <h2 className="text-tangy-yellow mb-6">The Body's Regulatory Hub</h2>
               <p className="mb-4 text-lg">
                 The adrenal-thyroid complex is the <strong>third point</strong> on the Triangle of Disease. It represents the regulatory system that governs metabolism, energy production, stress response, and hormonal balance.

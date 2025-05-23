@@ -24,8 +24,8 @@ const BloodSugarPage = () => {
       {/* Introduction Section */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
+            <div className="w-full lg:w-3/5">
               <h2 className="text-blue-sky mb-6">The Body's Fuel System</h2>
               <p className="mb-4 text-lg">
                 The blood sugar system is identified as the <strong>second point</strong> on the Triangle of Disease. It represents how your body converts food into usable energy for all cellular functions.
@@ -47,12 +47,12 @@ const BloodSugarPage = () => {
                 </div>
               </div>
             </div>
-            <div className="order-1 lg:order-2 relative">
+            <div className="w-full lg:w-2/5 relative">
               <img 
                 src="/blood-sugar.png"
                 alt="Blood Sugar System Diagram"
-                className="rounded-lg shadow-xl max-w-md mx-auto lg:mx-0"
-                style={{ maxHeight: '300px', objectFit: 'contain' }}
+                className="rounded-lg shadow-xl mx-auto"
+                style={{ maxHeight: '400px', objectFit: 'contain' }}
               />
               <div className="absolute -bottom-6 -left-6 bg-blue-sky text-white p-2 rounded-lg shadow-lg transform -rotate-3 hidden md:block">
                 <p className="font-proxima font-bold text-sm">Point 2 of the Triangle</p>
