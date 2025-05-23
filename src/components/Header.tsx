@@ -53,7 +53,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img
-            src="/assets/logo.png"
+            src="/assets/logo-header.png"
             alt="Daily with Doc & Becca"
             className="h-10 md:h-12"
           />
@@ -63,6 +63,9 @@ const Header = () => {
             </span>
             <span className="text-sm text-glorious-sunset">
               by Daily with Doc & Becca
+            </span>
+            <span className="text-xs text-gray-600 block">
+              A concept by Pharmacist Ben Fuchs, R.Ph.
             </span>
           </div>
         </Link>

@@ -13,13 +13,13 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center mb-4">
               <img 
-                src="/assets/logo-white.png" 
+                src="/assets/logo-footer.png" 
                 alt="Daily with Doc & Becca"
                 className="h-10" 
               />
             </Link>
             <p className="text-blue-100 mb-4">
-              Understanding the Triangle of Disease concept to address the root causes of chronic health issues.
+              Understanding the Triangle of Disease concept by Pharmacist Ben Fuchs, R.Ph. to address the root causes of chronic health issues.
             </p>
             <div className="flex space-x-4 mt-4">
               <a 
