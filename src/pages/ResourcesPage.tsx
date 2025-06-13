@@ -255,16 +255,16 @@ const ResourcesPage = () => {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">Institute of Holistic Health:</h4>
+                  <h4 className="font-semibold mb-2">Institute of Wholistic Health:</h4>
                   <p className="text-gray-700 mb-3">
                     The Institute teaches about the four areas of health (nutritional, emotional, spiritual, financial) and identifying nutritional deficiencies and solutions.
                   </p>
-                  <a 
-                    href="#" 
+                  <Link 
+                    to="/health-coaches" 
                     className="text-health-blue hover:text-blue-sky transition-colors font-medium"
                   >
                     Find a Certified Health Coach
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
