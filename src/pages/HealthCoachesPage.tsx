@@ -25,7 +25,7 @@ const HealthCoachesPage = () => {
     { name: 'Lorna Jones', email: 'bG9ybmFAZGFpbHl3aXRoZG9jLmNvbQ==' },
     { name: 'Albert Leenderts', email: 'YWxiZXJ0QGRhaWx5d2l0aGRvYy5jb20=' },
     { name: 'Mary McWhorter', email: 'bWFyeUBkYWlseXdpdGhkby5jb20=' },
-    { name: 'Marilyn Paera-Spear', email: 'bWFyaWx5bkBkYWlseXdpdGhkby5jb20=' },
+    { name: 'Marilyn Pazera-Spear', email: 'bWFyaWx5bkBkYWlseXdpdGhkby5jb20=' },
     { name: 'Ruthellen Sanchez', email: 'cnV0aGVsbGVuQGRhaWx5d2l0aGRvYy5jb20=' },
     { name: 'Coach Rod Wiggins', email: 'cm9kQGRhaWx5d2l0aGRvYy5jb20=' },
   ];

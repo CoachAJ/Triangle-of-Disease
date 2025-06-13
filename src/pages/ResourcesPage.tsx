@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
 
 const ResourcesPage = () => {
   return (
@@ -18,20 +19,20 @@ const ResourcesPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-10 text-center text-health-blue">Video & Audio Resources</h2>
-            
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold mb-6 text-center text-gray-800">Featured Video</h3>
-              <div className="aspect-w-16 aspect-h-9 w-full max-w-4xl mx-auto mb-6">
+            {/* Video & Audio Resources */}
+            <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-health-blue">Featured Video</h2>
+              <div className="aspect-w-16 aspect-h-9 mb-8">
                 <iframe 
-                  width="100%" 
+                  width="560" 
                   height="315" 
                   src="https://www.youtube.com/embed/hS5lWmBnqeg?si=Z3cxaRQcVQo1cItR" 
                   title="YouTube video player" 
                   frameBorder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   referrerPolicy="strict-origin-when-cross-origin" 
                   allowFullScreen
-                  className="rounded-lg shadow-xl w-full h-[500px]"
+                  className="w-full h-[500px] rounded-lg shadow-md"
                 ></iframe>
               </div>
               <div className="text-center">
@@ -39,13 +40,12 @@ const ResourcesPage = () => {
                   href="https://www.youtube.com/@CriticalHealthNews/streams" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-health-blue hover:text-blue-sky font-bold text-lg"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 transition-colors duration-200"
                 >
-                  <span>Watch more on our YouTube Channel</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                  <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                   </svg>
+                  Visit Our YouTube Channel
                 </a>
               </div>
             </div>
@@ -251,7 +251,7 @@ const ResourcesPage = () => {
               </div>
             </div>
 
-            {/* Monthly Webinars Section */}
+            {/* Monthly Webinars */}
             <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-bold mb-6 text-health-blue">Monthly Webinars</h2>
@@ -279,15 +279,34 @@ const ResourcesPage = () => {
                 <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
                   Get personalized guidance from our team of Certified Wholistic Health Coaches.
                 </p>
-                <a 
-                  href="/health-coaches" 
+                <Link 
+                  to="/health-coaches" 
                   className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-health-blue hover:bg-blue-sky transition-colors duration-200"
                 >
                   <span>Find a Certified Wholistic Health Coach</span>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
                   </svg>
-                </a>
+                </Link>
+              </div>
+            </div>
+
+            {/* Connect with Health Coaches */}
+            <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-3xl font-bold mb-6 text-health-blue">Connect with Health Coaches</h2>
+                <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                  Get personalized guidance from our team of Certified Wholistic Health Coaches.
+                </p>
+                <Link 
+                  to="/health-coaches" 
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-health-blue hover:bg-blue-sky transition-colors duration-200"
+                >
+                  <span>Find a Certified Wholistic Health Coach</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
+                  </svg>
+                </Link>
               </div>
             </div>
 
