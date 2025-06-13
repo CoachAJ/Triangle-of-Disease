@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Understanding the Triangle of Disease: Uncovering the Root of Chronic Health Issues - Daily with Doc & Becca" />
+    <meta name="keywords" content="Triangle of Disease, chronic disease, root cause, health issues, biochemical breakdown, systemic health, foundational health" />
+    <link rel="canonical" href="https://triangleofdisease.netlify.app/" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://triangleofdisease.netlify.app/" />
+    <meta property="og:title" content="Triangle of Disease - Daily with Doc & Becca" />
+    <meta property="og:description" content="Discover the three foundational systems that, when compromised, create a perfect storm for chronic health issues." />
+    <meta property="og:image" content="/assets/preview.jpg" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Triangle of Disease - Daily with Doc & Becca" />
+    <meta name="twitter:description" content="Discover the three foundational systems that, when compromised, create a perfect storm for chronic health issues." />
+    <meta name="twitter:image" content="/assets/preview.jpg" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Debug Console -->
+    <script>
+      // Enhanced console logging to debug loading issues
+      (function() {
+        var originalConsoleLog = console.log;
+        var originalConsoleError = console.error;
+        var logs = [];
+        
+        console.log = function() {
+          logs.push({type: 'log', args: Array.from(arguments), time: new Date().toISOString()});
+          originalConsoleLog.apply(console, arguments);
+        };
+        
+        console.error = function() {
+          logs.push({type: 'error', args: Array.from(arguments), time: new Date().toISOString()});
+          originalConsoleError.apply(console, arguments);
+        };
+        
+        window.onerror = function(message, source, lineno, colno, error) {
+          console.error('GLOBAL ERROR:', message, 'at', source, lineno + ':' + colno, error);
+          return false;
+        };
+        
+        window.getLogs = function() {
+          return logs;
+        };
+        
+        // Log page load start
+        console.log('Page load started');
+      })();
+    </script>
+    
+    <!-- Fallback if JavaScript fails -->
+    <noscript>
+      <style>
+        .app-loading { display: none; }
+        .noscript-message { display: block; }
+      </style>
+    </noscript>
+    
+    <title>Triangle of Disease - Daily with Doc & Becca</title>
+    
+    <style>
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      
+      .static-content {
+        display: none;
+        padding: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      .static-content h1, .static-content h2 {
+        color: #0068B3;
+      }
+      
+      .static-content p {
+        line-height: 1.6;
+      }
+      
+      .triangle-point {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-left: 4px solid #3CAADF;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Loading state -->
+      <div class="app-loading" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: 'Montserrat', sans-serif; color: #0068B3;">
+        <h1 style="margin-bottom: 20px;">Triangle of Disease</h1>
+        <p style="margin-bottom: 30px;">Loading the experience...</p>
+        <div style="width: 50px; height: 50px; border: 5px solid #f3f3f3; border-top: 5px solid #0068B3; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+      </div>
+      
+      <!-- Static content fallback that will be shown if app fails to load -->
+      <div class="static-content">
+        <h1>The Triangle of Disease</h1>
+        <p>Discover the three foundational systems that form the basis of chronic health issues.</p>
+        
+        <div class="triangle-point">
+          <h2>Digestive System</h2>
+          <p>The foundation of health begins with proper digestion. When compromised, it can lead to systemic inflammation and nutrient deficiencies.</p>
+        </div>
+        
+        <div class="triangle-point">
+          <h2>Blood Sugar Regulation</h2>
+          <p>Balanced blood sugar is critical for energy, mood stability, and preventing metabolic disorders.</p>
+        </div>
+        
+        <div class="triangle-point">
+          <h2>Adrenal-Thyroid Axis</h2>
+          <p>These hormone-producing glands regulate metabolism, energy, and stress response.</p>
+        </div>
+        
+        <p>For more information, please visit our <a href="https://102742703.youngevity.com/" style="color: #F58A34;">main website</a>.</p>
+        
+        <p style="font-size: 0.8rem; margin-top: 3rem;">
+          &copy; 2025 Daily with Doc & Becca | Independent Distributor ID: 102742703
+        </p>
+      </div>
+      
+      <!-- NoScript fallback -->
+      <div class="noscript-message" style="display: none; padding: 20px; max-width: 600px; margin: 0 auto; text-align: center; font-family: 'Montserrat', sans-serif;">
+        <h1 style="color: #0068B3; margin-bottom: 20px;">Triangle of Disease</h1>
+        <p style="margin-bottom: 15px;">This interactive experience requires JavaScript to be enabled in your browser.</p>
+        <p>Please enable JavaScript and reload the page, or visit <a href="https://102742703.youngevity.com/" style="color: #F58A34; text-decoration: underline;">our main website</a> for more information.</p>
+      </div>
+    </div>
+    
+    <!-- Safety timeout with fallback content -->
+    <script>
+      // Show static content if React app fails to load
+      setTimeout(function() {
+        var loadingElement = document.querySelector('.app-loading');
+        var staticContent = document.querySelector('.static-content');
+        var reactInitialized = window.reactInitialized || false;
+        
+        if (loadingElement && !reactInitialized) {
+          console.log('React app failed to initialize, showing static content');
+          loadingElement.style.display = 'none';
+          staticContent.style.display = 'block';
+        }
+      }, 5000);
+      
+      // Track if the main script loaded
+      window.addEventListener('load', function() {
+        console.log('Window load event fired');
+      });
+    </script>
+
+    <!-- Simple entry point for more reliable builds -->
+    <script type="module" src="./src/main.tsx"></script>
+    
+    <!-- Fallback script if module fails to load -->
+    <script>
+      // Mark as initialized when React mounts
+      window.markReactInitialized = function() {
+        window.reactInitialized = true;
+        console.log('React app marked as initialized');
+      };
+      
+      // Check for script loading errors
+      window.addEventListener('error', function(e) {
+        if (e.target.tagName === 'SCRIPT') {
+          console.error('Script loading error:', e.target.src);
+        }
+      }, true);
+    </script>
+  </body>
+</html>
