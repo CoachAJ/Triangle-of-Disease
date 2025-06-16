@@ -37,41 +37,67 @@ const Header = () => {
   }
 
   const navLinkClasses = ({ isActive }: { isActive: boolean }) => {
-    return `block py-2 px-4 transition-all duration-300 ${
-      isActive
-        ? 'text-glorious-sunset font-semibold'
-        : 'text-gray-700 hover:text-health-blue'
-    }`
+    return `block py-2 px-5 rounded-full font-montserrat transition-all duration-300 text-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-glorious-sunset/60 focus:ring-offset-2 focus:ring-offset-white/80
+      ${
+        isActive
+          ? 'bg-glorious-sunset/10 text-glorious-sunset font-bold scale-105'
+          : 'text-white hover:bg-health-blue/70 hover:text-tangy-yellow'
+      }`
+    
   }
 
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 py-4'
+        isScrolled
+          ? 'bg-gradient-to-r from-blue-sky via-health-blue to-glorious-sunset shadow-lg py-2'
+          : 'bg-gradient-to-r from-blue-sky/80 via-health-blue/80 to-glorious-sunset/80 py-4 shadow-md'
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center group">
           <img
             src="/logo-header.png"
             alt="Daily with Doc & Becca"
-            className="h-10 md:h-12"
+            className="h-12 md:h-14 drop-shadow-lg transition-transform group-hover:scale-105"
           />
+          <svg
+            className="ml-2 w-8 h-8 md:w-10 md:h-10 flex-shrink-0"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="Sunflower icon"
+          >
+            <circle cx="20" cy="20" r="8" fill="#784434" />
+            <g>
+              <ellipse cx="20" cy="5" rx="3" ry="7" fill="#FFB81C" />
+              <ellipse cx="20" cy="35" rx="3" ry="7" fill="#FFB81C" />
+              <ellipse cx="5" cy="20" rx="7" ry="3" fill="#FFB81C" />
+              <ellipse cx="35" cy="20" rx="7" ry="3" fill="#FFB81C" />
+              <ellipse cx="10" cy="10" rx="3" ry="7" transform="rotate(-45 10 10)" fill="#FFB81C" />
+              <ellipse cx="30" cy="10" rx="3" ry="7" transform="rotate(45 30 10)" fill="#FFB81C" />
+              <ellipse cx="10" cy="30" rx="3" ry="7" transform="rotate(45 10 30)" fill="#FFB81C" />
+              <ellipse cx="30" cy="30" rx="3" ry="7" transform="rotate(-45 30 30)" fill="#FFB81C" />
+            </g>
+          </svg>
           <div className="ml-3 hidden md:block">
-            <span className="block font-proxima text-health-blue text-xl font-bold">
+            <span className="block font-proxima text-health-blue text-2xl font-extrabold tracking-tight drop-shadow-sm">
               Triangle of Disease
             </span>
-            <span className="text-sm text-glorious-sunset">
+            <span className="text-base font-montserrat text-glorious-sunset font-semibold">
               by Daily with Doc & Becca
             </span>
-            <span className="text-xs text-gray-600 block">
+            <span className="text-xs text-hot-chocolate block">
+              A concept by Pharmacist Ben Fuchs, R.Ph.
+            </span>
+          </div>
               A concept by Pharmacist Ben Fuchs, R.Ph.
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-1">
+        <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
           <NavLink to="/" end className={navLinkClasses}>
             Home
           </NavLink>
