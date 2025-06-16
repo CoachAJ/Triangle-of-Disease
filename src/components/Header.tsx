@@ -49,7 +49,7 @@ const Header = () => {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 py-4'
+        isScrolled ? 'bg-white shadow-md py-1' : 'bg-white/90 py-3'
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -57,10 +57,10 @@ const Header = () => {
           <img
             src="/logo-header.png"
             alt="Daily with Doc & Becca"
-            className="h-12 md:h-14 drop-shadow-lg transition-transform group-hover:scale-105"
+            className="h-10 md:h-11 drop-shadow-lg transition-transform group-hover:scale-105"
           />
           <svg
-            className="ml-2 w-8 h-8 md:w-10 md:h-10 flex-shrink-0"
+            className="ml-2 w-6 h-6 md:w-7 md:h-7 flex-shrink-0"
             viewBox="0 0 40 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -79,10 +79,10 @@ const Header = () => {
             </g>
           </svg>
           <div className="ml-3 hidden md:block">
-            <span className="block font-proxima text-health-blue text-2xl md:text-3xl font-extrabold tracking-tight">
+            <span className="block font-proxima text-health-blue text-xl md:text-2xl font-extrabold tracking-tight">
               Triangle of Disease
             </span>
-            <span className="text-base md:text-lg font-montserrat text-glorious-sunset font-semibold">
+            <span className="text-sm md:text-base font-montserrat text-glorious-sunset font-semibold">
               by Daily with Doc & Becca
             </span>
             <span className="text-xs text-hot-chocolate block">
