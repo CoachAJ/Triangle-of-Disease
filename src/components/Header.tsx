@@ -37,11 +37,11 @@ const Header = () => {
   }
 
   const navLinkClasses = ({ isActive }: { isActive: boolean }) => {
-    return `block py-2 px-5 rounded-full font-montserrat transition-all duration-300 text-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-glorious-sunset/60 focus:ring-offset-2 focus:ring-offset-white/80
+    return `block py-2 px-5 rounded font-montserrat transition-all duration-300 text-base md:text-lg font-semibold focus:outline-none focus:ring-2 focus:ring-glorious-sunset/60 focus:ring-offset-2 focus:ring-offset-white/80
       ${
         isActive
-          ? 'bg-glorious-sunset/10 text-glorious-sunset font-bold scale-105'
-          : 'text-white hover:bg-health-blue/70 hover:text-tangy-yellow'
+          ? 'text-glorious-sunset font-bold underline underline-offset-8'
+          : 'text-gray-700 hover:text-health-blue'
       }`
     
   }
@@ -49,9 +49,7 @@ const Header = () => {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-gradient-to-r from-blue-sky via-health-blue to-glorious-sunset shadow-lg py-2'
-          : 'bg-gradient-to-r from-blue-sky/80 via-health-blue/80 to-glorious-sunset/80 py-4 shadow-md'
+        isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 py-4'
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -81,10 +79,10 @@ const Header = () => {
             </g>
           </svg>
           <div className="ml-3 hidden md:block">
-            <span className="block font-proxima text-health-blue text-2xl font-extrabold tracking-tight drop-shadow-sm">
+            <span className="block font-proxima text-health-blue text-2xl md:text-3xl font-extrabold tracking-tight">
               Triangle of Disease
             </span>
-            <span className="text-base font-montserrat text-glorious-sunset font-semibold">
+            <span className="text-base md:text-lg font-montserrat text-glorious-sunset font-semibold">
               by Daily with Doc & Becca
             </span>
             <span className="text-xs text-hot-chocolate block">
