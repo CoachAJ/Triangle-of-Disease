@@ -91,9 +91,6 @@ const Header = () => {
               A concept by Pharmacist Ben Fuchs, R.Ph.
             </span>
           </div>
-              A concept by Pharmacist Ben Fuchs, R.Ph.
-            </span>
-          </div>
         </Link>
 
         {/* Desktop Navigation */}
