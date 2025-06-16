@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import HeroSection from '../components/HeroSection'
 import SymptomChecker from '../components/SymptomChecker'
 import BMICalculator from '../components/BMICalculator'
-import FoodDiaryTool from '../components/FoodDiaryTool'
 
 const AssessmentToolsPage = () => {
   return (
@@ -15,9 +14,8 @@ const AssessmentToolsPage = () => {
 
       <HeroSection
         title="Assessment Tools"
-        subtitle="Identify Your Health Patterns"
-        description="Interactive tools to help you assess your health in relation to the Triangle of Disease. These assessments can help you identify which points of the Triangle might need the most attention."
-        backgroundImage="/assets/assessment-tools-hero-bg.jpg"
+        subtitle="Evaluate Your Health"
+        description="Use these interactive tools to assess your current health status and identify which points of the Triangle of Disease may need attention."
       />
 
       {/* Introduction Section */}
@@ -36,7 +34,6 @@ const AssessmentToolsPage = () => {
               <ol className="list-decimal pl-6 space-y-2">
                 <li><strong>Be honest</strong> with your responses for the most accurate results</li>
                 <li><strong>Start with the Symptom Checker</strong> to see which points of the Triangle might be most affected</li>
-                <li><strong>Use the Food Diary</strong> to track potential food triggers and patterns</li>
                 <li><strong>Calculate your BMI</strong> as one metric of metabolic health</li>
                 <li><strong>Take notes</strong> on your results to discuss with your health practitioner</li>
               </ol>
@@ -56,21 +53,6 @@ const AssessmentToolsPage = () => {
               Select the symptoms you're experiencing to see which points of the Triangle might be affected. This can help you prioritize your approach to addressing health challenges.
             </p>
             <SymptomChecker />
-          </div>
-        </div>
-      </section>
-
-      {/* Food Diary Section */}
-      <section className="py-16 bg-white" id="food-diary">
-        <div className="container-custom">
-          <div className="section-title">
-            <h2>Food Diary Tool</h2>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <p className="text-center text-lg mb-8">
-              Track your food intake and any symptoms that follow to identify potential trigger foods. This is especially helpful for addressing Point One of the Triangle (Digestive System).
-            </p>
-            <FoodDiaryTool />
           </div>
         </div>
       </section>

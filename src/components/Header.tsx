@@ -90,8 +90,14 @@ const Header = () => {
           <NavLink to="/resources" className={navLinkClasses}>
             Resources
           </NavLink>
+          <NavLink to="/health-coaches" className={navLinkClasses}>
+            Health Coaches
+          </NavLink>
           <NavLink to="/assessment-tools" className={navLinkClasses}>
             Assessment Tools
+          </NavLink>
+          <NavLink to="/food-diary" className={navLinkClasses}>
+            Food Diary
           </NavLink>
           <button
             onClick={toggleSearch}
@@ -169,11 +175,25 @@ const Header = () => {
               Resources
             </NavLink>
             <NavLink
+              to="/health-coaches"
+              className={navLinkClasses}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Health Coaches
+            </NavLink>
+            <NavLink
               to="/assessment-tools"
               className={navLinkClasses}
               onClick={() => setIsMenuOpen(false)}
             >
               Assessment Tools
+            </NavLink>
+            <NavLink
+              to="/food-diary"
+              className={navLinkClasses}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Food Diary
             </NavLink>
           </nav>
         </div>

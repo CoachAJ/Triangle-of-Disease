@@ -16,16 +16,20 @@ const HeroSection = ({
   description,
   buttonText,
   buttonLink,
-  backgroundImage = '/assets/hero-bg.jpg',
+  backgroundImage,
   showTriangle = false,
 }: HeroSectionProps) => {
   return (
     <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
       {/* Background with overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center z-0" 
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      />
+      {backgroundImage ? (
+        <div 
+          className="absolute inset-0 bg-cover bg-center z-0" 
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        />
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-br from-health-blue via-blue-sky to-glorious-sunset z-0" />
+      )}
       <div className="absolute inset-0 bg-health-blue/80 z-10" />
       
       {/* Content */}

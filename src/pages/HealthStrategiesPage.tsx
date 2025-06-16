@@ -15,10 +15,9 @@ const HealthStrategiesPage = () => {
       </Helmet>
 
       <HeroSection
-        title="Taking Action: Health Strategies"
-        subtitle="Implementing the Triangle of Disease Approach"
-        description="Practical strategies to address all three points of the Triangle of Disease for comprehensive health improvement."
-        backgroundImage="/assets/health-strategies-hero-bg.jpg"
+        title="Health Strategies"
+        subtitle="Practical Implementation"
+        description="Discover practical strategies and approaches to implement the Triangle of Disease concept in your daily life for optimal health outcomes."
       />
 
       {/* Introduction Section */}

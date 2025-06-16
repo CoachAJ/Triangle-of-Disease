@@ -17,8 +17,7 @@ const AdrenalThyroidPage = () => {
       <HeroSection
         title="The Adrenal-Thyroid Complex"
         subtitle="Point Three of the Triangle of Disease"
-        description="The regulatory hub that influences everything from energy production to hormonal balance and stress response. This third point of the Triangle is crucial for whole-body regulation."
-        backgroundImage="/assets/adrenal-thyroid-hero-bg.jpg"
+        description="The control center that regulates metabolism, stress response, and energy production. The third critical point for comprehensive health restoration."
       />
 
       {/* Introduction Section */}

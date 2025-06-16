@@ -18,7 +18,6 @@ const DigestiveSystemPage = () => {
         title="The Digestive System"
         subtitle="Point One of the Triangle of Disease"
         description="The cornerstone of health where the outside world meets the inside world. The primary point on the Triangle and the foundation for addressing many chronic health challenges."
-        backgroundImage="/assets/digestive-hero-bg.jpg"
       />
 
       {/* Introduction Section */}
@@ -59,11 +58,13 @@ const DigestiveSystemPage = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/assets/digestive-system-diagram.jpg" 
-                alt="Digestive System Diagram" 
-                className="rounded-lg shadow-xl"
-              />
+              <div className="bg-gradient-to-br from-glorious-sunset to-tangy-yellow rounded-lg shadow-xl h-80 flex items-center justify-center">
+                <div className="text-center text-white">
+                  <GiStomach size={80} className="mx-auto mb-4 opacity-75" />
+                  <h3 className="text-2xl font-proxima font-bold">Digestive System</h3>
+                  <p className="text-lg">Point 1 of the Triangle</p>
+                </div>
+              </div>
               <div className="absolute -bottom-6 -right-6 bg-health-blue text-white p-4 rounded-lg shadow-lg transform rotate-3 hidden md:block">
                 <p className="font-proxima font-bold">Point 1 of the Triangle</p>
               </div>

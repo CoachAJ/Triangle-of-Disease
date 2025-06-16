@@ -17,8 +17,7 @@ const BloodSugarPage = () => {
       <HeroSection
         title="The Blood Sugar System"
         subtitle="Point Two of the Triangle of Disease"
-        description="The fuel system of the body that powers all cellular functions. This second point on the Triangle is fundamental to energy production and metabolism."
-        backgroundImage="/assets/blood-sugar-hero-bg.jpg"
+        description="The energy regulation system that affects every cell in your body. Understanding blood sugar balance is crucial for addressing chronic health challenges."
       />
 
       {/* Introduction Section */}

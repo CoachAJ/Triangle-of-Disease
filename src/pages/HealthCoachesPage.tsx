@@ -16,18 +16,18 @@ const HealthCoachesPage = () => {
 
   // Coaches data with encoded emails
   const coaches = [
-    { name: 'Pharmacist Ben Dukes', email: 'UGhhcm1hY2lzdEJlbkBkYWlseXdpdGhkb2MuY29t' },
-    { name: 'AJ', email: 'YWpAZGFpbHl3aXRoZG9jLmNvbQ==' },
-    { name: 'Phyllis Anderson', email: 'UGh5bGxpc0BkYWlseXdpdGhkby5jb20=' },
-    { name: 'Keeley Bendik', email: 'a2VlbGV5QGRhaWx5d2l0aGRvYy5jb20=' },
-    { name: 'Sheri Browning', email: 'U2hlcmlAZGFpbHl3aXRoZG9jLmNvbQ==' },
-    { name: 'Becca Dukes', email: 'YmVjY2FAZGFpbHl3aXRoZG9jLmNvbQ==' },
-    { name: 'Lorna Jones', email: 'bG9ybmFAZGFpbHl3aXRoZG9jLmNvbQ==' },
-    { name: 'Albert Leenderts', email: 'YWxiZXJ0QGRhaWx5d2l0aGRvYy5jb20=' },
-    { name: 'Mary McWhorter', email: 'bWFyeUBkYWlseXdpdGhkby5jb20=' },
-    { name: 'Marilyn Pazera-Spear', email: 'bWFyaWx5bkBkYWlseXdpdGhkby5jb20=' },
-    { name: 'Ruthellen Sanchez', email: 'cnV0aGVsbGVuQGRhaWx5d2l0aGRvYy5jb20=' },
-    { name: 'Coach Rod Wiggins', email: 'cm9kQGRhaWx5d2l0aGRvYy5jb20=' },
+    { name: 'Pharmacist Ben - Registered Pharmacist', email: 'UGhhcm1hY2lzdEJlbkBkYWlseXdpdGhkb2MuY29t', certification: 'Registered Pharmacist' },
+    { name: 'AJ', email: 'YWpAZGFpbHl3aXRoZG9jLmNvbQ==', certification: 'Certified Wholistic Health Coach' },
+    { name: 'Phyllis Anderson', email: 'UGh5bGxpc0BkYWlseXdpdGhkby5jb20=', certification: 'Certified Wholistic Health Coach' },
+    { name: 'Keeley B', email: 'a2VlbGV5QGRhaWx5d2l0aGRvYy5jb20=', certification: 'Certified Wholistic Health Coach' },
+    { name: 'Sheri Browning', email: 'U2hlcmlAZGFpbHl3aXRoZG9jLmNvbQ==', certification: 'Certified Wholistic Health Coach' },
+    { name: 'Becca Dukes - Certified Naturopathic Practitioner', email: 'YmVjY2FAZGFpbHl3aXRoZG9jLmNvbQ==', certification: 'Certified Naturopathic Practitioner' },
+    { name: 'Lorna Jones', email: 'bG9ybmFAZGFpbHl3aXRoZG9jLmNvbQ==', certification: 'Certified Wholistic Health Coach' },
+    { name: 'Albert Leenderts', email: 'YWxiZXJ0QGRhaWx5d2l0aGRvYy5jb20=', certification: 'Certified Wholistic Health Coach' },
+    { name: 'Mary McWhorter', email: 'bWFyeUBkYWlseXdpdGhkby5jb20=', certification: 'Certified Wholistic Health Coach' },
+    { name: 'Marilyn Pazera-Spear', email: 'bWFyaWx5bkBkYWlseXdpdGhkby5jb20=', certification: 'Certified Wholistic Health Coach' },
+    { name: 'Ruthellen Sanchez', email: 'cnV0aGVsbGVuQGRhaWx5d2l0aGRvYy5jb20=', certification: 'Certified Wholistic Health Coach' },
+    { name: 'Coach Rod Wiggins', email: 'cm9kQGRhaWx5d2l0aGRvYy5jb20=', certification: 'Certified Wholistic Health Coach' },
   ];
 
   return (
@@ -58,7 +58,7 @@ const HealthCoachesPage = () => {
                     <h3 className="text-2xl font-bold mb-2 text-health-blue">{coach.name}</h3>
                     <div className="mb-4">
                       <span className="inline-block bg-glorious-sunset text-white text-xs px-2 py-1 rounded-full font-semibold">
-                        Certified Wholistic Health Coach
+                        {coach.certification}
                       </span>
                     </div>
                     <button
@@ -70,7 +70,11 @@ const HealthCoachesPage = () => {
                         <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                       </svg>
                       <span className="border-b border-transparent group-hover:border-health-blue">
-                        Contact {coach.name.split(' ')[0]}
+                        Contact {
+                          coach.name.includes('Pharmacist Ben') ? 'Ben' :
+                          coach.name.includes('Becca Dukes') ? 'Becca' :
+                          coach.name.split(' ')[0]
+                        }
                       </span>
                     </button>
                   </div>

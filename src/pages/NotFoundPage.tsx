@@ -15,7 +15,7 @@ const NotFoundPage = () => {
           <div>
             <img
               className="mx-auto h-24 w-auto"
-              src="/assets/logo.png"
+              src="/logo-header.png"
               alt="Daily with Doc & Becca"
             />
             <h1 className="mt-6 text-4xl font-proxima font-bold text-health-blue">

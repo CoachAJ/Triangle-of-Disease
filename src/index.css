@@ -2,25 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Proxima Nova';
-  src: url('./fonts/proxima-nova.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   
   body {
-    @apply font-montserrat text-gray-800;
+    @apply font-sans text-gray-800;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-proxima font-bold;
+    @apply font-serif font-bold;
   }
   
   h1 {

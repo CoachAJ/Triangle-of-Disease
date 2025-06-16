@@ -170,21 +170,18 @@ const HomePage = () => {
               quote="After years of dealing with chronic fatigue and digestive issues, understanding the Triangle of Disease concept completely changed my approach. Working on all three points has given me my life back!"
               author="Sarah M."
               condition="Recovered from Chronic Fatigue"
-              imageSrc="/assets/testimonial-1.jpg"
             />
 
             <TestimonialCard
               quote="My autoimmune condition had me on multiple medications with little improvement. Addressing the digestive system first, then blood sugar and finally the adrenal-thyroid complex has put my condition into remission."
               author="Michael T."
               condition="Hashimoto's Thyroiditis"
-              imageSrc="/assets/testimonial-2.jpg"
             />
 
             <TestimonialCard
               quote="I was diagnosed with pre-diabetes and had skin issues. Learning about the connection between blood sugar, digestion, and skin health through the Triangle of Disease approach helped me reverse my condition naturally."
               author="Jennifer K."
               condition="Reversed Pre-diabetes"
-              imageSrc="/assets/testimonial-3.jpg"
             />
           </div>
         </div>

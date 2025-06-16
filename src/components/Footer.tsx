@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
 import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa'
+import { useAffiliate } from '../contexts/AffiliateContext'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
-  const distributorId = '102742703' // Updated distributor ID
+  const { affiliateId, addAffiliateToLink } = useAffiliate()
+  const defaultDistributorId = '102742703' // Default distributor ID
+  const displayId = affiliateId || defaultDistributorId
 
   return (
     <footer className="bg-health-blue text-white">
@@ -23,7 +26,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4 mt-4">
               <a 
-                href="https://www.facebook.com/Healthwith90forlife" 
+                href="https://www.facebook.com/DailyWithDocAndBecca" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-white hover:text-tangy-yellow transition-colors"
@@ -63,85 +66,69 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-proxima font-bold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-blue-100 hover:text-tangy-yellow transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/digestive-system" className="text-blue-100 hover:text-tangy-yellow transition-colors">
+                <Link to="/digestive-system" className="text-blue-100 hover:text-white transition-colors">
                   Digestive System
                 </Link>
               </li>
               <li>
-                <Link to="/blood-sugar" className="text-blue-100 hover:text-tangy-yellow transition-colors">
+                <Link to="/blood-sugar" className="text-blue-100 hover:text-white transition-colors">
                   Blood Sugar
                 </Link>
               </li>
               <li>
-                <Link to="/adrenal-thyroid" className="text-blue-100 hover:text-tangy-yellow transition-colors">
-                  Adrenal-Thyroid
+                <Link to="/adrenal-thyroid" className="text-blue-100 hover:text-white transition-colors">
+                  Adrenal/Thyroid
                 </Link>
               </li>
               <li>
-                <Link to="/health-strategies" className="text-blue-100 hover:text-tangy-yellow transition-colors">
+                <Link to="/health-strategies" className="text-blue-100 hover:text-white transition-colors">
                   Health Strategies
+                </Link>
+              </li>
+              <li>
+                <Link to="/resources" className="text-blue-100 hover:text-white transition-colors">
+                  Resources
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Tools */}
           <div>
-            <h3 className="text-xl font-proxima font-bold mb-4">Resources</h3>
+            <h3 className="text-lg font-bold mb-4">Tools</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/assessment-tools" className="text-blue-100 hover:text-tangy-yellow transition-colors">
+                <Link to="/assessment-tools" className="text-blue-100 hover:text-white transition-colors">
                   Assessment Tools
                 </Link>
               </li>
               <li>
-                <Link to="/resources" className="text-blue-100 hover:text-tangy-yellow transition-colors">
-                  Books & Publications
+                <Link to="/food-diary" className="text-blue-100 hover:text-white transition-colors">
+                  Food Diary
                 </Link>
               </li>
               <li>
-                <a 
-                  href={`https://${distributorId}.youngevity.com`} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-blue-100 hover:text-tangy-yellow transition-colors"
-                >
-                  Youngevity Store
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://dailywithdoc.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-blue-100 hover:text-tangy-yellow transition-colors"
-                >
-                  Daily with Doc & Becca
-                </a>
+                <Link to="/health-coaches" className="text-blue-100 hover:text-white transition-colors">
+                  Health Coaches
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact & Newsletter */}
           <div>
-            <h3 className="text-xl font-proxima font-bold mb-4">Contact Us</h3>
-            <p className="text-blue-100 mb-2">
-              Email: <a href="mailto:questions@dailywithdoc.com?subject=Triangle%20of%20Disease%20Inquiry" className="hover:text-tangy-yellow transition-colors">questions@dailywithdoc.com</a>
+            <h3 className="text-lg font-bold mb-4">Stay Connected</h3>
+            <p className="text-blue-100 mb-4">
+              Get the latest health insights and Triangle of Disease updates.
             </p>
-            <p className="text-blue-100 mb-2">
-              Phone: <a href="tel:8559493377" className="hover:text-tangy-yellow transition-colors">855.949.3377 ext 800</a>
-            </p>
-            <div className="mt-4">
+            <div className="space-y-3">
               <a 
-                href="/newsletter" 
+                href={addAffiliateToLink("https://dailywithdoc.com/newsletter")}
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="inline-block bg-glorious-sunset text-white px-4 py-2 rounded-md hover:bg-tangy-yellow transition-colors"
               >
                 Subscribe to Newsletter
@@ -157,7 +144,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-wrap space-x-4">
               <a 
-                href={`https://${distributorId}.youngevity.com/us_en/privacy-policy`} 
+                href={`https://${displayId}.youngevity.com/us_en/privacy-policy`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-blue-200 hover:text-white transition-colors"
@@ -165,7 +152,7 @@ const Footer = () => {
                 Privacy Policy
               </a>
               <a 
-                href={`https://${distributorId}.youngevity.com/us_en/terms-of-use`} 
+                href={`https://${displayId}.youngevity.com/us_en/terms-of-use`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-blue-200 hover:text-white transition-colors"
@@ -173,7 +160,7 @@ const Footer = () => {
                 Terms of Use
               </a>
               <a 
-                href={`https://${distributorId}.youngevity.com/us_en/youngevity-data-protection-policy`} 
+                href={`https://${displayId}.youngevity.com/us_en/youngevity-data-protection-policy`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-blue-200 hover:text-white transition-colors"
@@ -182,13 +169,13 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="mt-2 flex items-center">
-            <p className="text-blue-200">Independent YGY Distributor ID: {distributorId}</p>
-            <img 
-              src="/assets/ygy-logo.png" 
-              alt="Independent YGY Distributor" 
-              className="h-8 ml-2" 
-            />
+          <div className="mt-2 flex flex-wrap justify-between items-center">
+            <p className="text-blue-200">Independent YGY Distributor ID: {displayId}</p>
+            {affiliateId && (
+              <p className="text-tangy-yellow text-xs">
+                🎯 Referred by Affiliate: {affiliateId}
+              </p>
+            )}
           </div>
         </div>
       </div>

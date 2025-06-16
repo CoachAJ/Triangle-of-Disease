@@ -8,6 +8,7 @@ import HealthStrategiesPage from './pages/HealthStrategiesPage'
 import ResourcesPage from './pages/ResourcesPage'
 import HealthCoachesPage from './pages/HealthCoachesPage'
 import AssessmentToolsPage from './pages/AssessmentToolsPage'
+import FoodDiaryPage from './pages/FoodDiaryPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="resources" element={<ResourcesPage />} />
         <Route path="health-coaches" element={<HealthCoachesPage />} />
         <Route path="assessment-tools" element={<AssessmentToolsPage />} />
+        <Route path="food-diary" element={<FoodDiaryPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

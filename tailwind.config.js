@@ -16,8 +16,8 @@ export default {
         'shade-grey': '#58595B',
       },
       fontFamily: {
-        'proxima': ['Proxima Nova', 'sans-serif'],
-        'montserrat': ['Montserrat', 'sans-serif'],
+        'proxima': ['system-ui', 'sans-serif'],
+        'montserrat': ['system-ui', 'sans-serif'],
       },
     },
   },
