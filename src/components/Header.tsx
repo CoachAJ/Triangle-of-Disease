@@ -4,26 +4,42 @@ import { FaBars, FaSearch, FaTimes } from 'react-icons/fa'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [searchOpen, setSearchOpen] = useState(false)
+  const [isHidden, setIsHidden] = useState(false)
+  const [lastScrollY, setLastScrollY] = useState(0)
   const [searchQuery, setSearchQuery] = useState('')
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
+      const currentScrollY = window.scrollY;
+      
+      // Update scrolled state
+      setIsScrolled(currentScrollY > 10);
+      
+      // Handle header visibility based on scroll direction
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past 100px - hide header
+        setIsHidden(true);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up - show header
+        setIsHidden(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
   const toggleSearch = () => {
-    setSearchOpen(!searchOpen)
-    if (!searchOpen) {
+    setIsSearchOpen(!isSearchOpen)
+    if (!isSearchOpen) {
       setTimeout(() => document.getElementById('search-input')?.focus(), 100)
     }
   }
@@ -33,7 +49,7 @@ const Header = () => {
     console.log('Searching for:', searchQuery)
     // Future implementation: search functionality
     setSearchQuery('')
-    setSearchOpen(false)
+    setIsSearchOpen(false)
   }
 
   const navLinkClasses = ({ isActive }: { isActive: boolean }) => {
@@ -49,52 +65,72 @@ const Header = () => {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-0.5' : 'bg-white/90 py-1'
+        isHidden 
+          ? '-translate-y-full' 
+          : isScrolled 
+            ? 'bg-white shadow-md py-0.5' 
+            : 'bg-white/90 py-1'
       }`}
     >
-      {/* Top Row - Logo and Title */}
-      <div className="container mx-auto px-4">
-        <Link to="/" className="flex items-center justify-center group py-1">
-          <img
-            src="/logo-header.png"
-            alt="Daily with Doc & Becca"
-            className="h-6 md:h-7 drop-shadow-lg transition-transform group-hover:scale-105"
-          />
-          <svg
-            className="ml-1.5 w-4 h-4 md:w-5 md:h-5 flex-shrink-0"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-label="Sunflower icon"
-          >
-            <circle cx="20" cy="20" r="8" fill="#784434" />
-            <g>
-              <ellipse cx="20" cy="5" rx="3" ry="7" fill="#FFB81C" />
-              <ellipse cx="20" cy="35" rx="3" ry="7" fill="#FFB81C" />
-              <ellipse cx="5" cy="20" rx="7" ry="3" fill="#FFB81C" />
-              <ellipse cx="35" cy="20" rx="7" ry="3" fill="#FFB81C" />
-              <ellipse cx="10" cy="10" rx="3" ry="7" transform="rotate(-45 10 10)" fill="#FFB81C" />
-              <ellipse cx="30" cy="10" rx="3" ry="7" transform="rotate(45 30 10)" fill="#FFB81C" />
-              <ellipse cx="10" cy="30" rx="3" ry="7" transform="rotate(45 10 30)" fill="#FFB81C" />
-              <ellipse cx="30" cy="30" rx="3" ry="7" transform="rotate(-45 30 30)" fill="#FFB81C" />
-            </g>
-          </svg>
-          <div className="ml-2 text-center">
-            <span className="block font-proxima text-health-blue text-base md:text-lg font-extrabold tracking-tight">
-              Triangle of Disease
-            </span>
-            <span className="text-xs text-hot-chocolate block -mt-0.5">
-              A concept by Pharmacist Ben Fuchs, R.Ph.
-            </span>
-          </div>
-        </Link>
-      </div>
+      {/* Top Row - Logo and Title - Hide when scrolled */}
+      {!isScrolled && (
+        <div className="container mx-auto px-4">
+          <Link to="/" className="flex items-center justify-center group py-1">
+            <img
+              src="/logo-header.png"
+              alt="Daily with Doc & Becca"
+              className="h-6 md:h-7 drop-shadow-lg transition-transform group-hover:scale-105"
+            />
+            <svg
+              className="ml-1.5 w-4 h-4 md:w-5 md:h-5 flex-shrink-0"
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Sunflower icon"
+            >
+              <circle cx="20" cy="20" r="8" fill="#784434" />
+              <g>
+                <ellipse cx="20" cy="5" rx="3" ry="7" fill="#FFB81C" />
+                <ellipse cx="20" cy="35" rx="3" ry="7" fill="#FFB81C" />
+                <ellipse cx="5" cy="20" rx="7" ry="3" fill="#FFB81C" />
+                <ellipse cx="35" cy="20" rx="7" ry="3" fill="#FFB81C" />
+                <ellipse cx="10" cy="10" rx="3" ry="7" transform="rotate(-45 10 10)" fill="#FFB81C" />
+                <ellipse cx="30" cy="10" rx="3" ry="7" transform="rotate(45 30 10)" fill="#FFB81C" />
+                <ellipse cx="10" cy="30" rx="3" ry="7" transform="rotate(45 10 30)" fill="#FFB81C" />
+                <ellipse cx="30" cy="30" rx="3" ry="7" transform="rotate(-45 30 30)" fill="#FFB81C" />
+              </g>
+            </svg>
+            <div className="ml-2 text-center">
+              <span className="block font-proxima text-health-blue text-base md:text-lg font-extrabold tracking-tight">
+                Triangle of Disease
+              </span>
+              <span className="text-xs text-hot-chocolate block -mt-0.5">
+                A concept by Pharmacist Ben Fuchs, R.Ph.
+              </span>
+            </div>
+          </Link>
+        </div>
+      )}
 
       {/* Bottom Row - Navigation */}
-      <div className="border-t border-gray-100">
+      <div className={isScrolled ? '' : 'border-t border-gray-100'}>
         <div className="container mx-auto px-4 flex justify-between items-center py-1">
+          {/* Compact logo for scrolled state */}
+          {isScrolled && (
+            <Link to="/" className="flex items-center group">
+              <img
+                src="/logo-header.png"
+                alt="Daily with Doc & Becca"
+                className="h-4 md:h-5 drop-shadow-lg transition-transform group-hover:scale-105"
+              />
+              <span className="ml-2 font-proxima text-health-blue text-sm md:text-base font-bold tracking-tight">
+                Triangle of Disease
+              </span>
+            </Link>
+          )}
+          
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center justify-center w-full space-x-4">
+          <nav className={`hidden lg:flex items-center space-x-4 ${isScrolled ? 'ml-auto' : 'justify-center w-full'}`}>
             <NavLink to="/" end className={navLinkClasses}>
               Home
             </NavLink>
@@ -224,7 +260,7 @@ const Header = () => {
       )}
 
       {/* Search Overlay */}
-      {searchOpen && (
+      {isSearchOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-md p-4 border-t border-gray-200">
           <form onSubmit={handleSearch} className="flex">
             <input
