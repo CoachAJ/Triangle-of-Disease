@@ -67,56 +67,66 @@ const HeroSection = ({
                     Point 3: Adrenal-Thyroid (top)
                     Visual layout does not match point numbers for clinical logic reasons.
                   */}
-                  {/* Digestive System (Point 1 - Bottom Left) */}
-                  <g className="cursor-pointer hover:opacity-90 transition-opacity">
-                    <circle cx="15" cy="76.6" r="15" fill="#F58A34" filter="url(#shadow)" />
-                    <text x="15" y="76.6" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="5" fontWeight="bold">
-                      POINT 1
-                    </text>
-                    <text x="15" y="82.6" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="4.5" fontWeight="bold">
+                  {/* Digestive System (Bottom Left) */}
+                  <g className="cursor-pointer hover:opacity-95 transition-opacity">
+                    <radialGradient id="digestiveGradient" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="#FFD6B3" />
+                      <stop offset="100%" stopColor="#F58A34" />
+                    </radialGradient>
+                    <circle cx="15" cy="76.6" r="15" fill="url(#digestiveGradient)" filter="url(#shadowSoft)" />
+                    <text x="15" y="80" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="6.5" fontWeight="bold" style={{ letterSpacing: 0.5 }}>
                       DIGESTIVE
                     </text>
-                    <text x="15" y="87.6" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="4.5" fontWeight="bold">
+                    <text x="15" y="87" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="6.5" fontWeight="bold" style={{ letterSpacing: 0.5 }}>
                       SYSTEM
                     </text>
                   </g>
-                  {/* Blood Sugar System (Point 2 - Bottom Right) */}
-                  <g className="cursor-pointer hover:opacity-90 transition-opacity">
-                    <circle cx="85" cy="76.6" r="15" fill="#3CAADF" filter="url(#shadow)" />
-                    <text x="85" y="76.6" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="5" fontWeight="bold">
-                      POINT 2
-                    </text>
-                    <text x="85" y="82.6" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="4.5" fontWeight="bold">
+                  {/* Blood Sugar System (Bottom Right) */}
+                  <g className="cursor-pointer hover:opacity-95 transition-opacity">
+                    <radialGradient id="bloodSugarGradient" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="#D8F1FF" />
+                      <stop offset="100%" stopColor="#3CAADF" />
+                    </radialGradient>
+                    <circle cx="85" cy="76.6" r="15" fill="url(#bloodSugarGradient)" filter="url(#shadowSoft)" />
+                    <text x="85" y="80" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="6.5" fontWeight="bold" style={{ letterSpacing: 0.5 }}>
                       BLOOD SUGAR
                     </text>
-                    <text x="85" y="87.6" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="4.5" fontWeight="bold">
+                    <text x="85" y="87" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="6.5" fontWeight="bold" style={{ letterSpacing: 0.5 }}>
                       SYSTEM
                     </text>
                   </g>
-                  {/* Adrenal Thyroid Complex (Point 3 - Top) */}
-                  <g className="cursor-pointer hover:opacity-90 transition-opacity">
-                    <circle cx="50" cy="10" r="15" fill="#FFB81C" filter="url(#shadow)" />
-                    <text x="50" y="10" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="5" fontWeight="bold">
-                      POINT 3
-                    </text>
-                    <text x="50" y="16" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="4.5" fontWeight="bold">
+                  {/* Adrenal Thyroid Complex (Top) */}
+                  <g className="cursor-pointer hover:opacity-95 transition-opacity">
+                    <radialGradient id="adrenalGradient" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="#FFEFAA" />
+                      <stop offset="100%" stopColor="#FFB81C" />
+                    </radialGradient>
+                    <circle cx="50" cy="10" r="15" fill="url(#adrenalGradient)" filter="url(#shadowSoft)" />
+                    <text x="50" y="14" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="6.5" fontWeight="bold" style={{ letterSpacing: 0.5 }}>
                       ADRENAL
                     </text>
-                    <text x="50" y="21" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="4.5" fontWeight="bold">
+                    <text x="50" y="21" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="6.5" fontWeight="bold" style={{ letterSpacing: 0.5 }}>
                       THYROID
                     </text>
                   </g>
-                  {/* SVG Drop Shadow Filter */}
+                  {/* SVG Drop Shadow & Glow Filters */}
                   <defs>
-                    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-                      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#222" flood-opacity="0.25" />
+                    <filter id="shadowSoft" x="-30%" y="-30%" width="160%" height="160%">
+                      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.18" />
+                    </filter>
+                    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+                      <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
+                      <feMerge>
+                        <feMergeNode in="coloredBlur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
                     </filter>
                   </defs>
                   
-                  {/* Connecting lines */}
-                  <line x1="50" y1="25" x2="15" y2="61.6" stroke="white" strokeWidth="1" strokeDasharray="4" />
-                  <line x1="50" y1="25" x2="85" y2="61.6" stroke="white" strokeWidth="1" strokeDasharray="4" />
-                  <line x1="15" y1="61.6" x2="85" y2="61.6" stroke="white" strokeWidth="1" strokeDasharray="4" />
+                  {/* Connecting lines with glow */}
+                  <line x1="50" y1="25" x2="15" y2="61.6" stroke="white" strokeWidth="2.5" strokeDasharray="6" filter="url(#glow)" />
+                  <line x1="50" y1="25" x2="85" y2="61.6" stroke="white" strokeWidth="2.5" strokeDasharray="6" filter="url(#glow)" />
+                  <line x1="15" y1="61.6" x2="85" y2="61.6" stroke="white" strokeWidth="2.5" strokeDasharray="6" filter="url(#glow)" />
                 </svg>
               </div>
               
