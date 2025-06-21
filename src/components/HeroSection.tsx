@@ -60,38 +60,42 @@ const HeroSection = ({
                     strokeWidth="1"
                   />
                   
-                  {/* Digestive System (Point 1) */}
+                  {/* Adrenal Thyroid Complex (Point 1 - Top) */}
                   <g className="cursor-pointer hover:opacity-90 transition-opacity">
-                    <circle cx="50" cy="10" r="15" fill="#F58A34" />
+                    <circle cx="50" cy="10" r="15" fill="#FFB81C" filter="url(#shadow)" />
                     <text x="50" y="10" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="5" fontWeight="bold">
-                      DIGESTIVE
+                      ADRENAL
                     </text>
                     <text x="50" y="16" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="5" fontWeight="bold">
-                      SYSTEM
+                      THYROID
                     </text>
                   </g>
-                  
-                  {/* Blood Sugar System (Point 2) */}
+                  {/* Digestive System (Point 2 - Bottom Left) */}
                   <g className="cursor-pointer hover:opacity-90 transition-opacity">
-                    <circle cx="15" cy="76.6" r="15" fill="#3CAADF" />
+                    <circle cx="15" cy="76.6" r="15" fill="#F58A34" filter="url(#shadow)" />
                     <text x="15" y="76.6" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="5" fontWeight="bold">
-                      BLOOD SUGAR
+                      DIGESTIVE
                     </text>
                     <text x="15" y="82.6" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="5" fontWeight="bold">
                       SYSTEM
                     </text>
                   </g>
-                  
-                  {/* Adrenal Thyroid Complex (Point 3) */}
+                  {/* Blood Sugar System (Point 3 - Bottom Right) */}
                   <g className="cursor-pointer hover:opacity-90 transition-opacity">
-                    <circle cx="85" cy="76.6" r="15" fill="#FFB81C" />
+                    <circle cx="85" cy="76.6" r="15" fill="#3CAADF" filter="url(#shadow)" />
                     <text x="85" y="76.6" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="5" fontWeight="bold">
-                      ADRENAL
+                      BLOOD SUGAR
                     </text>
                     <text x="85" y="82.6" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="5" fontWeight="bold">
-                      THYROID
+                      SYSTEM
                     </text>
                   </g>
+                  {/* SVG Drop Shadow Filter */}
+                  <defs>
+                    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#222" flood-opacity="0.25" />
+                    </filter>
+                  </defs>
                   
                   {/* Connecting lines */}
                   <line x1="50" y1="25" x2="15" y2="61.6" stroke="white" strokeWidth="1" strokeDasharray="4" />
@@ -101,17 +105,17 @@ const HeroSection = ({
               </div>
               
               <div className="grid grid-cols-3 gap-4 mt-6 text-center">
-                <Link to="/digestive-system" className="text-white hover:text-tangy-yellow transition-colors">
+                <Link to="/adrenal-thyroid" className="text-white hover:text-tangy-yellow transition-colors">
                   <span className="block font-bold">Point 1</span>
+                  <span className="text-sm">Adrenal-Thyroid</span>
+                </Link>
+                <Link to="/digestive-system" className="text-white hover:text-tangy-yellow transition-colors">
+                  <span className="block font-bold">Point 2</span>
                   <span className="text-sm">Digestive System</span>
                 </Link>
                 <Link to="/blood-sugar" className="text-white hover:text-tangy-yellow transition-colors">
-                  <span className="block font-bold">Point 2</span>
-                  <span className="text-sm">Blood Sugar</span>
-                </Link>
-                <Link to="/adrenal-thyroid" className="text-white hover:text-tangy-yellow transition-colors">
                   <span className="block font-bold">Point 3</span>
-                  <span className="text-sm">Adrenal-Thyroid</span>
+                  <span className="text-sm">Blood Sugar</span>
                 </Link>
               </div>
             </div>
