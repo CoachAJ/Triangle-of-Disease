@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import { FaBars, FaSearch, FaTimes } from 'react-icons/fa'
+import { useState, useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { FaBars, FaTimes, FaSearch } from 'react-icons/fa';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isHidden, setIsHidden] = useState(false)
-  const [lastScrollY, setLastScrollY] = useState(0)
-  const [searchQuery, setSearchQuery] = useState('')
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,255 +33,183 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
-
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen)
+    setIsSearchOpen(!isSearchOpen);
     if (!isSearchOpen) {
-      setTimeout(() => document.getElementById('search-input')?.focus(), 100)
+      setTimeout(() => document.getElementById('search-input')?.focus(), 100);
     }
-  }
+  };
 
   const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Searching for:', searchQuery)
-    // Future implementation: search functionality
-    setSearchQuery('')
-    setIsSearchOpen(false)
-  }
-
-  const navLinkClasses = ({ isActive }: { isActive: boolean }) => {
-    return `block py-2 px-5 rounded font-montserrat transition-all duration-300 text-base md:text-lg font-semibold focus:outline-none focus:ring-2 focus:ring-glorious-sunset/60 focus:ring-offset-2 focus:ring-offset-white/80
-      ${
-        isActive
-          ? 'text-glorious-sunset font-bold underline underline-offset-8'
-          : 'text-gray-700 hover:text-health-blue'
-      }`
-    
-  }
+    e.preventDefault();
+    console.log('Searching for:', searchQuery);
+    setSearchQuery('');
+    setIsSearchOpen(false);
+  };
 
   return (
-    <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isHidden 
-          ? '-translate-y-full' 
-          : isScrolled 
-            ? 'bg-white shadow-md py-0.5' 
-            : 'bg-white/90 py-1'
-      }`}
-    >
-      {/* Top Row - Logo and Title - Hide when scrolled */}
-      {!isScrolled && (
+    <>
+      <header
+        className={`fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm ${
+          isHidden ? '-translate-y-full' : 'shadow-sm'
+        }`}
+      >
         <div className="container mx-auto px-4">
-          <Link to="/" className="flex items-center justify-center group py-1">
-            <img
-              src="/logo-header.png"
-              alt="Daily with Doc & Becca"
-              className="h-6 md:h-7 drop-shadow-lg transition-transform group-hover:scale-105"
-            />
-            <svg
-              className="ml-1.5 w-4 h-4 md:w-5 md:h-5 flex-shrink-0"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-label="Sunflower icon"
-            >
-              <circle cx="20" cy="20" r="8" fill="#784434" />
-              <g>
-                <ellipse cx="20" cy="5" rx="3" ry="7" fill="#FFB81C" />
-                <ellipse cx="20" cy="35" rx="3" ry="7" fill="#FFB81C" />
-                <ellipse cx="5" cy="20" rx="7" ry="3" fill="#FFB81C" />
-                <ellipse cx="35" cy="20" rx="7" ry="3" fill="#FFB81C" />
-                <ellipse cx="10" cy="10" rx="3" ry="7" transform="rotate(-45 10 10)" fill="#FFB81C" />
-                <ellipse cx="30" cy="10" rx="3" ry="7" transform="rotate(45 30 10)" fill="#FFB81C" />
-                <ellipse cx="10" cy="30" rx="3" ry="7" transform="rotate(45 10 30)" fill="#FFB81C" />
-                <ellipse cx="30" cy="30" rx="3" ry="7" transform="rotate(-45 30 30)" fill="#FFB81C" />
-              </g>
-            </svg>
-            <div className="ml-2 text-center">
-              <span className="block font-proxima text-health-blue text-base md:text-lg font-extrabold tracking-tight">
-                Triangle of Disease
-              </span>
-              <span className="text-xs text-hot-chocolate block -mt-0.5">
-                A concept by Pharmacist Ben Fuchs, R.Ph.
-              </span>
-            </div>
-          </Link>
-        </div>
-      )}
-
-      {/* Bottom Row - Navigation */}
-      <div className={isScrolled ? '' : 'border-t border-gray-100'}>
-        <div className="container mx-auto px-4 flex justify-between items-center py-1">
-          {/* Compact logo for scrolled state */}
-          {isScrolled && (
+          <div className="flex items-center justify-between h-14">
+            {/* Logo and Branding */}
             <Link to="/" className="flex items-center group">
-              <img
-                src="/logo-header.png"
-                alt="Daily with Doc & Becca"
-                className="h-4 md:h-5 drop-shadow-lg transition-transform group-hover:scale-105"
-              />
-              <span className="ml-2 font-proxima text-health-blue text-sm md:text-base font-bold tracking-tight">
-                Triangle of Disease
-              </span>
+              <div className="flex items-center">
+                <img
+                  src="/logo-header.png"
+                  alt="Daily with Doc & Becca"
+                  className="h-8 w-auto"
+                />
+                <div className="ml-2">
+                  <div className="font-proxima text-health-blue font-extrabold text-sm leading-tight">
+                    Triangle of Disease
+                  </div>
+                  <div className="text-[10px] text-gray-500 -mt-0.5">
+                    by Daily with Doc & Becca
+                  </div>
+                </div>
+              </div>
             </Link>
-          )}
-          
-          {/* Desktop Navigation */}
-          <nav className={`hidden lg:flex items-center space-x-4 ${isScrolled ? 'ml-auto' : 'justify-center w-full'}`}>
-            <NavLink to="/" end className={navLinkClasses}>
-              Home
-            </NavLink>
-            <NavLink to="/digestive-system" className={navLinkClasses}>
-              Digestive System
-            </NavLink>
-            <NavLink to="/blood-sugar" className={navLinkClasses}>
-              Blood Sugar
-            </NavLink>
-            <NavLink to="/adrenal-thyroid" className={navLinkClasses}>
-              Adrenal-Thyroid
-            </NavLink>
-            <NavLink to="/health-strategies" className={navLinkClasses}>
-              Health Strategies
-            </NavLink>
-            <NavLink to="/resources" className={navLinkClasses}>
-              Resources
-            </NavLink>
-            <NavLink to="/health-coaches" className={navLinkClasses}>
-              Health Coaches
-            </NavLink>
-            <NavLink to="/assessment-tools" className={navLinkClasses}>
-              Assessment Tools
-            </NavLink>
-            <NavLink to="/food-diary" className={navLinkClasses}>
-              Food Diary
-            </NavLink>
-            <button
-              onClick={toggleSearch}
-              className="ml-3 p-1.5 text-gray-600 hover:text-health-blue transition-colors"
-              aria-label="Search"
-            >
-              <FaSearch />
-            </button>
-          </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center lg:hidden ml-auto">
-            <button
-              onClick={toggleSearch}
-              className="p-1.5 mr-2 text-gray-600 hover:text-health-blue transition-colors"
-              aria-label="Search"
-            >
-              <FaSearch />
-            </button>
-            <button
-              onClick={toggleMenu}
-              className="p-1.5 text-gray-600 hover:text-health-blue transition-colors"
-              aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
-            >
-              {isMenuOpen ? <FaTimes /> : <FaBars />}
-            </button>
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-1">
+              {[
+                { to: "/", label: "Home" },
+                { to: "/digestive-system", label: "Digestive" },
+                { to: "/blood-sugar", label: "Blood Sugar" },
+                { to: "/adrenal-thyroid", label: "Adrenal" },
+                { to: "/health-strategies", label: "Health" },
+                { to: "/resources", label: "Resources" },
+                { to: "/health-coaches", label: "Coaches" },
+                { to: "/assessment-tools", label: "Tools" },
+                { to: "/food-diary", label: "Food Diary" },
+              ].map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  end={item.to === "/"}
+                  className={({ isActive }) =>
+                    `px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors ${
+                      isActive
+                        ? "bg-health-blue/10 text-health-blue"
+                        : "text-gray-700 hover:bg-gray-100"
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+              <button
+                onClick={toggleSearch}
+                className="ml-1 p-1.5 text-gray-500 hover:text-health-blue transition-colors rounded-full hover:bg-gray-100"
+                aria-label="Search"
+              >
+                <FaSearch className="w-3.5 h-3.5" />
+              </button>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <div className="flex items-center lg:hidden">
+              <button
+                onClick={toggleSearch}
+                className="p-2 text-gray-500 hover:text-health-blue transition-colors"
+                aria-label="Search"
+              >
+                <FaSearch className="w-4 h-4" />
+              </button>
+              <button
+                onClick={toggleMenu}
+                className="p-2 text-gray-500 hover:text-health-blue transition-colors"
+                aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
+              >
+                {isMenuOpen ? (
+                  <FaTimes className="w-5 h-5" />
+                ) : (
+                  <FaBars className="w-5 h-5" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </header>
+      {/* Add spacing to account for fixed header */}
+      <div className="h-14"></div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 shadow-md">
-          <nav className="container mx-auto px-4 py-3">
-            <NavLink
-              to="/"
-              end
-              className={navLinkClasses}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/digestive-system"
-              className={navLinkClasses}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Digestive System
-            </NavLink>
-            <NavLink
-              to="/blood-sugar"
-              className={navLinkClasses}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Blood Sugar
-            </NavLink>
-            <NavLink
-              to="/adrenal-thyroid"
-              className={navLinkClasses}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Adrenal-Thyroid
-            </NavLink>
-            <NavLink
-              to="/health-strategies"
-              className={navLinkClasses}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Health Strategies
-            </NavLink>
-            <NavLink
-              to="/resources"
-              className={navLinkClasses}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Resources
-            </NavLink>
-            <NavLink
-              to="/health-coaches"
-              className={navLinkClasses}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Health Coaches
-            </NavLink>
-            <NavLink
-              to="/assessment-tools"
-              className={navLinkClasses}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Assessment Tools
-            </NavLink>
-            <NavLink
-              to="/food-diary"
-              className={navLinkClasses}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Food Diary
-            </NavLink>
-          </nav>
+        <div className="fixed inset-0 z-40 bg-white mt-14 lg:hidden overflow-y-auto">
+          <div className="container mx-auto px-4 py-2">
+            <nav className="flex flex-col space-y-1 py-2">
+              {[
+                { to: "/", label: "Home" },
+                { to: "/digestive-system", label: "Digestive System" },
+                { to: "/blood-sugar", label: "Blood Sugar" },
+                { to: "/adrenal-thyroid", label: "Adrenal-Thyroid" },
+                { to: "/health-strategies", label: "Health Strategies" },
+                { to: "/resources", label: "Resources" },
+                { to: "/health-coaches", label: "Health Coaches" },
+                { to: "/assessment-tools", label: "Assessment Tools" },
+                { to: "/food-diary", label: "Food Diary" },
+              ].map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  end={item.to === "/"}
+                  className={({ isActive }) =>
+                    `px-4 py-3 text-sm font-medium rounded-md ${
+                      isActive
+                        ? "bg-health-blue/10 text-health-blue"
+                        : "text-gray-700 hover:bg-gray-50"
+                    }`
+                  }
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </nav>
+          </div>
         </div>
       )}
 
       {/* Search Overlay */}
       {isSearchOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-md p-4 border-t border-gray-200">
-          <form onSubmit={handleSearch} className="flex">
-            <input
-              id="search-input"
-              type="text"
-              placeholder="Search..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-grow px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-health-blue"
-            />
-            <button
-              type="submit"
-              className="bg-health-blue text-white px-4 py-2 rounded-r-md hover:bg-blue-sky transition-colors"
-            >
-              Search
-            </button>
-          </form>
+        <div className="fixed inset-0 z-50 bg-white/95 backdrop-blur-sm pt-20">
+          <div className="container mx-auto px-4">
+            <form onSubmit={handleSearch} className="max-w-2xl mx-auto">
+              <div className="relative">
+                <input
+                  id="search-input"
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search the site..."
+                  className="w-full px-5 py-4 text-lg border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-health-blue outline-none bg-transparent"
+                  autoComplete="off"
+                />
+                <button
+                  type="button"
+                  onClick={() => setIsSearchOpen(false)}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-gray-400 hover:text-gray-600"
+                  aria-label="Close search"
+                >
+                  <FaTimes className="w-5 h-5" />
+                </button>
+              </div>
+              <div className="mt-4 text-sm text-gray-500 text-center">
+                Press Enter to search or ESC to close
+              </div>
+            </form>
+          </div>
         </div>
       )}
-    </header>
-  )
+    </>
+  );
 }
 
-export default Header
+export default Header;
