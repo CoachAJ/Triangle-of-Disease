@@ -49,19 +49,19 @@ const Header = () => {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-1' : 'bg-white/90 py-2'
+        isScrolled ? 'bg-white shadow-md py-0.5' : 'bg-white/90 py-1'
       }`}
     >
       {/* Top Row - Logo and Title */}
       <div className="container mx-auto px-4">
-        <Link to="/" className="flex items-center justify-center group py-2">
+        <Link to="/" className="flex items-center justify-center group py-1">
           <img
             src="/logo-header.png"
             alt="Daily with Doc & Becca"
-            className="h-8 md:h-10 drop-shadow-lg transition-transform group-hover:scale-105"
+            className="h-6 md:h-7 drop-shadow-lg transition-transform group-hover:scale-105"
           />
           <svg
-            className="ml-2 w-5 h-5 md:w-6 md:h-6 flex-shrink-0"
+            className="ml-1.5 w-4 h-4 md:w-5 md:h-5 flex-shrink-0"
             viewBox="0 0 40 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -79,11 +79,11 @@ const Header = () => {
               <ellipse cx="30" cy="30" rx="3" ry="7" transform="rotate(-45 30 30)" fill="#FFB81C" />
             </g>
           </svg>
-          <div className="ml-3 text-center">
-            <span className="block font-proxima text-health-blue text-lg md:text-xl font-extrabold tracking-tight">
+          <div className="ml-2 text-center">
+            <span className="block font-proxima text-health-blue text-base md:text-lg font-extrabold tracking-tight">
               Triangle of Disease
             </span>
-            <span className="text-xs text-hot-chocolate block">
+            <span className="text-xs text-hot-chocolate block -mt-0.5">
               A concept by Pharmacist Ben Fuchs, R.Ph.
             </span>
           </div>
@@ -92,9 +92,9 @@ const Header = () => {
 
       {/* Bottom Row - Navigation */}
       <div className="border-t border-gray-100">
-        <div className="container mx-auto px-4 flex justify-between items-center">
+        <div className="container mx-auto px-4 flex justify-between items-center py-1">
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center justify-center w-full space-x-6">
+          <nav className="hidden lg:flex items-center justify-center w-full space-x-4">
             <NavLink to="/" end className={navLinkClasses}>
               Home
             </NavLink>
@@ -124,7 +124,7 @@ const Header = () => {
             </NavLink>
             <button
               onClick={toggleSearch}
-              className="ml-4 p-2 text-gray-600 hover:text-health-blue transition-colors"
+              className="ml-3 p-1.5 text-gray-600 hover:text-health-blue transition-colors"
               aria-label="Search"
             >
               <FaSearch />
@@ -135,14 +135,14 @@ const Header = () => {
           <div className="flex items-center lg:hidden ml-auto">
             <button
               onClick={toggleSearch}
-              className="p-2 mr-2 text-gray-600 hover:text-health-blue transition-colors"
+              className="p-1.5 mr-2 text-gray-600 hover:text-health-blue transition-colors"
               aria-label="Search"
             >
               <FaSearch />
             </button>
             <button
               onClick={toggleMenu}
-              className="p-2 text-gray-600 hover:text-health-blue transition-colors"
+              className="p-1.5 text-gray-600 hover:text-health-blue transition-colors"
               aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
             >
               {isMenuOpen ? <FaTimes /> : <FaBars />}
