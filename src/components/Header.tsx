@@ -5,7 +5,6 @@ import { FaBars, FaTimes, FaSearch } from 'react-icons/fa';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
@@ -13,9 +12,6 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
-      // Update scrolled state
-      setIsScrolled(currentScrollY > 10);
       
       // Handle header visibility based on scroll direction
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
