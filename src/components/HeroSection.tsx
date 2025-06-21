@@ -49,8 +49,8 @@ const HeroSection = ({
           )}
           
           {showTriangle && (
-            <div className="mt-10 max-w-lg mx-auto" style={{ maxWidth: '350px' }}>
-  <div className="relative w-full" style={{ paddingBottom: '56%' }}> {/* Reduced triangle aspect ratio */}
+            <div className="mt-10 max-w-2xl mx-auto" style={{ maxWidth: '500px' }}>
+  <div className="relative w-full" style={{ paddingBottom: '86.6%' }}> {/* Larger triangle aspect ratio */}
     <svg viewBox="0 0 100 86.6" className="absolute inset-0 w-full h-full" style={{ width: '100%', height: '100%' }}>
                   {/* Triangle outline */}
                   <path 
@@ -74,10 +74,10 @@ const HeroSection = ({
                       <stop offset="100%" stopColor="#F58A34" />
                     </radialGradient>
                     <circle cx="15" cy="76.6" r="15" fill="url(#digestiveGradient)" filter="url(#shadowSoft)" />
-                    <text x="15" y="80" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="4.2" fontWeight="bold" style={{ letterSpacing: 0.5 }}>
+                    <text x="15" y="80" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="2.8" fontWeight="bold" style={{ letterSpacing: 0.2 }}>
                       DIGESTIVE
                     </text>
-                    <text x="15" y="87" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="4.2" fontWeight="bold" style={{ letterSpacing: 0.5 }}>
+                    <text x="15" y="84" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="2.8" fontWeight="bold" style={{ letterSpacing: 0.2 }}>
                       SYSTEM
                     </text>
                   </g>
@@ -88,10 +88,10 @@ const HeroSection = ({
                       <stop offset="100%" stopColor="#3CAADF" />
                     </radialGradient>
                     <circle cx="85" cy="76.6" r="15" fill="url(#bloodSugarGradient)" filter="url(#shadowSoft)" />
-                    <text x="85" y="80" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="4.2" fontWeight="bold" style={{ letterSpacing: 0.5 }}>
+                    <text x="85" y="80" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="2.8" fontWeight="bold" style={{ letterSpacing: 0.2 }}>
                       BLOOD SUGAR
                     </text>
-                    <text x="85" y="87" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="4.2" fontWeight="bold" style={{ letterSpacing: 0.5 }}>
+                    <text x="85" y="84" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="2.8" fontWeight="bold" style={{ letterSpacing: 0.2 }}>
                       SYSTEM
                     </text>
                   </g>
@@ -102,10 +102,10 @@ const HeroSection = ({
                       <stop offset="100%" stopColor="#FFB81C" />
                     </radialGradient>
                     <circle cx="50" cy="10" r="15" fill="url(#adrenalGradient)" filter="url(#shadowSoft)" />
-                    <text x="50" y="14" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="4.2" fontWeight="bold" style={{ letterSpacing: 0.5 }}>
+                    <text x="50" y="14" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="2.8" fontWeight="bold" style={{ letterSpacing: 0.2 }}>
                       ADRENAL
                     </text>
-                    <text x="50" y="21" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="4.2" fontWeight="bold" style={{ letterSpacing: 0.5 }}>
+                    <text x="50" y="18" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="2.8" fontWeight="bold" style={{ letterSpacing: 0.2 }}>
                       THYROID
                     </text>
                   </g>
