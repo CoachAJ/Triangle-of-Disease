@@ -4,6 +4,7 @@ import { FaBook, FaUser, FaDownload, FaExternalLinkAlt, FaYoutube, FaFileAlt, Fa
 import { BsTwitter } from 'react-icons/bs'
 import { useAffiliate } from '../contexts/AffiliateContext'
 import HeroSection from '../components/HeroSection'
+import NutrientResourceApp from '../components/NutrientResourceApp'
 
 const ResourcesPage = () => {
   const { addAffiliateToLink } = useAffiliate()
@@ -660,6 +661,16 @@ const ResourcesPage = () => {
               Subscribe to Our Channel
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Nutrient Resource App */}
+      <section className="py-16 bg-white">
+        <div className="container-custom">
+          <div className="section-title">
+            <h2>Nutrient Resource App</h2>
+          </div>
+          <NutrientResourceApp />
         </div>
       </section>
     </>

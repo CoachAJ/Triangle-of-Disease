@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Vitamin A",
+    "abbreviation": "Retinol",
+    "category": "Vitamin",
+    "description": "Essential for vision, immune function, and epithelial tissue integrity.",
+    "biochemical_role": "Critical for gene expression, thyroid hormone utilization, and skin health.",
+    "key_food_sources": ["Liver", "Egg yolks", "Butter (grass-fed)", "Cod liver oil", "Carrots (if tolerated)"],
+    "youngevity_products": ["Ultimate Daily Classic", "Beyond Tangy Tangerine", "i26", "Healthy Start Pack"],
+    "optimal_dosing": "RDA: ~700–900 mcg/day; Therapeutic: 5000–10,000 IU/day; best absorbed with fat.",
+    "deficiency_symptoms": ["Night blindness", "Dry eyes", "Skin issues", "Frequent infections", "Thyroid dysfunction"],
+    "synergy_interactions": {
+      "works_with": ["Zinc", "Vitamin D", "B-vitamins"],
+      "enhanced_by": ["Fat digestion", "Healthy gut flora"],
+      "inhibited_by": ["Alcohol", "High sugar"]
+    },
+    "triangle_of_disease_impact": {
+      "digestive_health": "Supports mucosal immunity and microbiome balance",
+      "blood_sugar": "Indirectly affects insulin sensitivity via gene regulation",
+      "adrenal_thyroid": "Required for thyroid hormone receptor function"
+    }
+  },
+  {
+    "name": "Vitamin B1",
+    "abbreviation": "Thiamine",
+    "category": "Vitamin",
+    "description": "Crucial for energy metabolism and nerve conduction.",
+    "biochemical_role": "Coenzyme in carbohydrate metabolism, ATP production, neurotransmitter synthesis.",
+    "key_food_sources": ["Pork", "Sunflower seeds", "Organ meats", "Legumes (if well-digested)"],
+    "youngevity_products": ["Ultimate Daily Classic", "Beyond Tangy Tangerine", "Sweeties", "Energy Support Pack"],
+    "optimal_dosing": "RDA: ~1.2 mg/day; Therapeutic: 50–100 mg/day; best taken in divided doses.",
+    "deficiency_symptoms": ["Fatigue", "Brain fog", "Muscle weakness", "Depression", "Neurological damage"],
+    "synergy_interactions": {
+      "works_with": ["B2", "B3", "Magnesium"],
+      "enhanced_by": ["Protein", "Stomach acid"],
+      "inhibited_by": ["Alcohol", "Caffeine"]
+    },
+    "triangle_of_disease_impact": {
+      "digestive_health": "Supports enzyme production and digestion",
+      "blood_sugar": "Central to glucose metabolism and insulin response",
+      "adrenal_thyroid": "Nervous system stability under stress"
+    }
+  },
+  {
+    "name": "Vitamin B2",
+    "abbreviation": "Riboflavin",
+    "category": "Vitamin",
+    "description": "Involved in redox reactions and mitochondrial energy production.",
+    "biochemical_role": "Co-factor in FAD/FMN enzymes, supports detoxification and antioxidant recycling.",
+    "key_food_sources": ["Eggs", "Dairy (if tolerated)", "Leafy greens", "Lean meats", "Mushrooms"],
+    "youngevity_products": ["Ultimate Daily Classic", "Beyond Tangy Tangerine", "i26", "Energy Support Pack"],
+    "optimal_dosing": "RDA: ~1.3 mg/day; Therapeutic: 10–50 mg/day; light-sensitive, best stored dark.",
+    "deficiency_symptoms": ["Sore throat", "Angular cheilitis", "Eye sensitivity", "Fatigue", "Poor immunity"],
+    "synergy_interactions": {
+      "works_with": ["B1", "B3", "Iron"],
+      "enhanced_by": ["B6", "Copper"],
+      "inhibited_by": ["Processed foods", "Diuretics"]
+    },
+    "triangle_of_disease_impact": {
+      "digestive_health": "Supports bile production and gut lining",
+      "blood_sugar": "Enhances mitochondrial efficiency and glucose utilization",
+      "adrenal_thyroid": "Needed for hormone synthesis and cellular respiration"
+    }
+  }
+]
