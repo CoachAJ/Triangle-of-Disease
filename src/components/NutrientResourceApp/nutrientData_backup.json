@@ -1928,8 +1928,12 @@
     "triangle_of_disease_impact": {
       "digestive_health": "Supports liver detox and bile flow",
       "blood_sugar": "Improves insulin sensitivity and glucose uptake",
-      "adrenal_thyroid": "Maintains circulatory support for hormone delivery" }
-    } ,
+      "adrenal_thyroid": "Maintains circulatory support for hormone delivery"
+    }
+  }
+]
+
+[
   {
     "name": "Lithium",
     "abbreviation": "Li",
