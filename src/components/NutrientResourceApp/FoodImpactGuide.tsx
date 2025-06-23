@@ -1,6 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const foods = [
+interface Food {
+  name: string;
+  category: string;
+  reason: string;
+  impact: string;
+  alternatives: string[];
+}
+
+const foods: Food[] = [
   { name: "Eggs", category: "Power Food", reason: "Rich in nutrients", impact: "Supports all Triangle points", alternatives: ["None needed"] },
   { name: "Wheat", category: "Problem Food", reason: "Triggers gut issues", impact: "Compromises Digestive", alternatives: ["Quinoa", "Rice"] },
   { name: "Spinach", category: "Power Food", reason: "High in magnesium", impact: "Supports Blood Sugar", alternatives: ["Kale"] },
@@ -9,7 +17,7 @@ const foods = [
 
 export default function FoodImpactGuide() {
   const [query, setQuery] = useState("");
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState<Food | null>(null);
 
   const filtered = query
     ? foods.filter(f => f.name.toLowerCase().includes(query.toLowerCase()))

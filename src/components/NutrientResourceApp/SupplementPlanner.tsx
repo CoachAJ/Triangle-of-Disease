@@ -1,9 +1,40 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-export default function SupplementPlanner({ nutrients }) {
-  const [step, setStep] = useState(1);
-  const [inputs, setInputs] = useState({ gender: "", weight: "", goal: "", symptom: "" });
-  const [recommendation, setRecommendation] = useState(null);
+interface Nutrient {
+  name: string;
+  abbreviation: string;
+  category: string;
+  description: string;
+  biochemical_role: string;
+  key_food_sources: string[];
+  youngevity_products: string[];
+  optimal_dosing: string;
+  deficiency_symptoms: string[];
+  synergy_interactions: {
+    works_with: string[];
+    enhanced_by: string[];
+    inhibited_by: string[];
+  };
+  triangle_of_disease_impact: {
+    digestive_health: string;
+    blood_sugar: string;
+    adrenal_thyroid: string;
+  };
+}
+
+interface SupplementPlannerProps {
+  nutrients: Nutrient[];
+}
+
+interface Recommendation {
+  products: string[];
+  rationale: string;
+}
+
+export default function SupplementPlanner({ nutrients }: SupplementPlannerProps): JSX.Element {
+  const [step, setStep] = useState<number>(1);
+  const [inputs, setInputs] = useState<{ gender: string; weight: string; goal: string; symptom: string }>({ gender: "", weight: "", goal: "", symptom: "" });
+  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
 
   function handleNext() {
     if (step === 3) {

@@ -1,8 +1,34 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-export default function NutrientLookup({ nutrients }) {
-  const [query, setQuery] = useState("");
-  const [selected, setSelected] = useState(null);
+interface Nutrient {
+  name: string;
+  abbreviation: string;
+  category: string;
+  description: string;
+  biochemical_role: string;
+  key_food_sources: string[];
+  youngevity_products: string[];
+  optimal_dosing: string;
+  deficiency_symptoms: string[];
+  synergy_interactions: {
+    works_with: string[];
+    enhanced_by: string[];
+    inhibited_by: string[];
+  };
+  triangle_of_disease_impact: {
+    digestive_health: string;
+    blood_sugar: string;
+    adrenal_thyroid: string;
+  };
+}
+
+interface NutrientLookupProps {
+  nutrients: Nutrient[];
+}
+
+export default function NutrientLookup({ nutrients }: NutrientLookupProps): JSX.Element {
+  const [query, setQuery] = useState<string>("");
+  const [selected, setSelected] = useState<Nutrient | null>(null);
 
   const results = query
     ? nutrients.filter(

@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-export default function FoodDiary() {
-  const [food, setFood] = useState("");
-  const [symptom, setSymptom] = useState("");
-  const [entries, setEntries] = useState([]);
+interface Entry {
+  date: string;
+  food: string;
+  symptom: string;
+}
+
+export default function FoodDiary(): JSX.Element {
+  const [food, setFood] = useState<string>("");
+  const [symptom, setSymptom] = useState<string>("");
+  const [entries, setEntries] = useState<Entry[]>([]);
 
   function handleAdd() {
     if (food || symptom) {

@@ -1,15 +1,51 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const commonSymptoms = [
+interface Nutrient {
+  name: string;
+  abbreviation: string;
+  category: string;
+  description: string;
+  biochemical_role: string;
+  key_food_sources: string[];
+  youngevity_products: string[];
+  optimal_dosing: string;
+  deficiency_symptoms: string[];
+  synergy_interactions: {
+    works_with: string[];
+    enhanced_by: string[];
+    inhibited_by: string[];
+  };
+  triangle_of_disease_impact: {
+    digestive_health: string;
+    blood_sugar: string;
+    adrenal_thyroid: string;
+  };
+}
+
+interface SymptomFinderProps {
+  nutrients: Nutrient[];
+}
+
+interface SymptomMap {
+  [key: string]: string[];
+}
+
+interface Results {
+  rootCauses: string[];
+  nutrients: Nutrient[];
+  recommendations: string[];
+}
+
+const commonSymptoms: string[] = [
   "Fatigue", "Brain fog", "Constipation", "Muscle weakness", "Mood swings", "Skin issues", "Headaches"
 ];
 
-export default function SymptomFinder({ nutrients }) {
-  const [symptoms, setSymptoms] = useState([]);
-  const [results, setResults] = useState(null);
+export default function SymptomFinder({ nutrients }: SymptomFinderProps): JSX.Element {
+  const [symptoms, setSymptoms] = useState<string[]>([]);
+  const [results, setResults] = useState<Results | null>(null);
 
   // Simple mapping for demo; in production use a richer mapping
-  const symptomMap = {
+  const symptomMap: SymptomMap = {
     "Fatigue": ["Vitamin B1", "Vitamin B12", "Magnesium", "Iron"],
     "Brain fog": ["Vitamin B1", "Vitamin B6", "Choline"],
     "Constipation": ["Magnesium", "Potassium", "Vitamin C"],
@@ -19,15 +55,15 @@ export default function SymptomFinder({ nutrients }) {
     "Headaches": ["Magnesium", "Vitamin B2", "Vitamin B5"]
   };
 
-  function handleFind() {
-    let foundNutrients = [];
+  function handleFind(): void {
+    let foundNutrients: string[] = [];
     symptoms.forEach(symp => {
       if (symptomMap[symp]) {
         foundNutrients = [...foundNutrients, ...symptomMap[symp]];
       }
     });
     foundNutrients = [...new Set(foundNutrients)];
-    const foundProfiles = nutrients.filter(n => foundNutrients.includes(n.name));
+    const foundProfiles: Nutrient[] = nutrients.filter(n => foundNutrients.includes(n.name));
     setResults({
       rootCauses: ["Digestive", "Blood Sugar", "Adrenal/Thyroid"], // For demo, always show all 3
       nutrients: foundProfiles,
