@@ -36,7 +36,7 @@ export default function NutrientResourceApp(): JSX.Element {
       <h1 className="text-3xl font-proxima font-bold text-center mb-2">Nutrient Resource Center</h1>
       <NutrientLookup nutrients={nutrients} />
       <SymptomFinder nutrients={nutrients} />
-      <SupplementPlanner nutrients={nutrients} />
+      <SupplementPlanner />
       <FoodImpactGuide />
       <FoodDiary />
     </div>
