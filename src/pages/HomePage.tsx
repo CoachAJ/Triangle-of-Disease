@@ -35,77 +35,149 @@ const HomePage = () => {
             </p>
           </div>
 
-          <div className="relative flex justify-center items-center mb-12" style={{ minHeight: '320px' }}>
-  {/* Glowing SVG Triangle Background */}
-  <svg
-    width="420"
-    height="340"
-    viewBox="0 0 420 340"
-    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none"
-    style={{ filter: 'drop-shadow(0 0 40px #3CAADF88)' }}
-  >
-    <polygon
-      points="210,30 40,310 380,310"
-      fill="none"
-      stroke="#FFB81C"
-      strokeWidth="10"
-      strokeLinejoin="round"
-      opacity="0.25"
-    />
-  </svg>
-  {/* Triangle Points - Adrenal Top, Digestive BL, Blood Sugar BR */}
-  <div className="absolute z-10 left-1/2 top-0 -translate-x-1/2" style={{ width: '160px' }}>
-    <div className="triangle-point bg-white shadow-md hover:shadow-2xl transition-transform duration-300 hover:scale-105 rounded-xl p-4">
-      <div className="w-20 h-20 rounded-full bg-tangy-yellow flex items-center justify-center text-gray-800 mb-2 shadow-lg ring-4 ring-yellow-300/30">
-        <FaStethoscope size={40} />
-      </div>
-      <h3 className="text-lg font-proxima font-bold mb-1 text-center">Adrenal-Thyroid Complex</h3>
-      <p className="text-center mb-2 text-xs">
-        The regulatory hub that influences everything from energy production to hormonal balance and stress response.
-      </p>
-      <Link 
-        to="/adrenal-thyroid" 
-        className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs"
-      >
-        Learn More
-      </Link>
-    </div>
-  </div>
-  <div className="absolute z-10 left-0 bottom-0" style={{ width: '160px' }}>
-    <div className="triangle-point bg-white shadow-md hover:shadow-2xl transition-transform duration-300 hover:scale-105 rounded-xl p-4">
-      <div className="w-20 h-20 rounded-full bg-glorious-sunset flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-orange-300/30">
-        <GiStomach size={40} />
-      </div>
-      <h3 className="text-lg font-proxima font-bold mb-1 text-center">Digestive System</h3>
-      <p className="text-center mb-2 text-xs">
-        The place where the outside world meets the inside world. Issues here lead to toxicity and malnourishment entering the bloodstream.
-      </p>
-      <Link 
-        to="/digestive-system" 
-        className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs"
-      >
-        Learn More
-      </Link>
-    </div>
-  </div>
-  <div className="absolute z-10 right-0 bottom-0" style={{ width: '160px' }}>
-    <div className="triangle-point bg-white shadow-md hover:shadow-2xl transition-transform duration-300 hover:scale-105 rounded-xl p-4">
-      <div className="w-20 h-20 rounded-full bg-blue-sky flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-blue-300/30">
-        <MdBloodtype size={40} />
-      </div>
-      <h3 className="text-lg font-proxima font-bold mb-1 text-center">Blood Sugar System</h3>
-      <p className="text-center mb-2 text-xs">
-        Disturbances in blood sugar (disglycemia) are consistently involved in chronic disease and metabolic syndrome.
-      </p>
-      <Link 
-        to="/blood-sugar" 
-        className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs"
-      >
-        Learn More
-      </Link>
-    </div>
-  </div>
-</div>
+          {/* Triangle of Disease Cards - Responsive Layout */}
+          <div className="mb-12">
+            {/* Triangle SVG for larger screens only */}
+            <div className="hidden md:block relative" style={{ height: '340px' }}>
+              <svg
+                width="100%"
+                height="340"
+                viewBox="0 0 420 340"
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none"
+                style={{ filter: 'drop-shadow(0 0 40px #3CAADF88)', maxWidth: '420px' }}
+              >
+                <polygon
+                  points="210,30 40,310 380,310"
+                  fill="none"
+                  stroke="#FFB81C"
+                  strokeWidth="10"
+                  strokeLinejoin="round"
+                  opacity="0.25"
+                />
+              </svg>
+              
+              {/* Triangle Points positioned absolutely on larger screens */}
+              <div className="absolute z-10 left-1/2 top-0 -translate-x-1/2" style={{ width: '200px', maxWidth: '90%' }}>
+                <div className="triangle-point bg-white shadow-md hover:shadow-2xl transition-transform duration-300 hover:scale-105 rounded-xl p-4">
+                  <div className="mx-auto w-16 h-16 md:w-20 md:h-20 rounded-full bg-tangy-yellow flex items-center justify-center text-gray-800 mb-2 shadow-lg ring-4 ring-yellow-300/30">
+                    <FaStethoscope size={32} />
+                  </div>
+                  <h3 className="text-lg font-proxima font-bold mb-1 text-center">Adrenal-Thyroid Complex</h3>
+                  <p className="text-center mb-2 text-xs">
+                    The regulatory hub that influences everything from energy production to hormonal balance and stress response.
+                  </p>
+                  <div className="text-center">
+                    <Link 
+                      to="/adrenal-thyroid" 
+                      className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs inline-block"
+                    >
+                      Learn More
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="absolute z-10 left-0 bottom-0" style={{ width: '200px', maxWidth: '90%' }}>
+                <div className="triangle-point bg-white shadow-md hover:shadow-2xl transition-transform duration-300 hover:scale-105 rounded-xl p-4">
+                  <div className="mx-auto w-16 h-16 md:w-20 md:h-20 rounded-full bg-glorious-sunset flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-orange-300/30">
+                    <GiStomach size={32} />
+                  </div>
+                  <h3 className="text-lg font-proxima font-bold mb-1 text-center">Digestive System</h3>
+                  <p className="text-center mb-2 text-xs">
+                    The place where the outside world meets the inside world. Issues here lead to toxicity and malnourishment entering the bloodstream.
+                  </p>
+                  <div className="text-center">
+                    <Link 
+                      to="/digestive-system" 
+                      className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs inline-block"
+                    >
+                      Learn More
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="absolute z-10 right-0 bottom-0" style={{ width: '200px', maxWidth: '90%' }}>
+                <div className="triangle-point bg-white shadow-md hover:shadow-2xl transition-transform duration-300 hover:scale-105 rounded-xl p-4">
+                  <div className="mx-auto w-16 h-16 md:w-20 md:h-20 rounded-full bg-blue-sky flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-blue-300/30">
+                    <MdBloodtype size={32} />
+                  </div>
+                  <h3 className="text-lg font-proxima font-bold mb-1 text-center">Blood Sugar System</h3>
+                  <p className="text-center mb-2 text-xs">
+                    Disturbances in blood sugar (disglycemia) are consistently involved in chronic disease and metabolic syndrome.
+                  </p>
+                  <div className="text-center">
+                    <Link 
+                      to="/blood-sugar" 
+                      className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs inline-block"
+                    >
+                      Learn More
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Mobile-friendly stacked cards */}
+            <div className="md:hidden grid grid-cols-1 gap-6">
+              {/* Adrenal-Thyroid Card */}
+              <div className="bg-white shadow-md rounded-xl p-4">
+                <div className="mx-auto w-16 h-16 rounded-full bg-tangy-yellow flex items-center justify-center text-gray-800 mb-2 shadow-lg ring-4 ring-yellow-300/30">
+                  <FaStethoscope size={32} />
+                </div>
+                <h3 className="text-lg font-proxima font-bold mb-1 text-center">Adrenal-Thyroid Complex</h3>
+                <p className="text-center mb-2 text-sm">
+                  The regulatory hub that influences everything from energy production to hormonal balance and stress response.
+                </p>
+                <div className="text-center">
+                  <Link 
+                    to="/adrenal-thyroid" 
+                    className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs inline-block"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Digestive System Card */}
+              <div className="bg-white shadow-md rounded-xl p-4">
+                <div className="mx-auto w-16 h-16 rounded-full bg-glorious-sunset flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-orange-300/30">
+                  <GiStomach size={32} />
+                </div>
+                <h3 className="text-lg font-proxima font-bold mb-1 text-center">Digestive System</h3>
+                <p className="text-center mb-2 text-sm">
+                  The place where the outside world meets the inside world. Issues here lead to toxicity and malnourishment entering the bloodstream.
+                </p>
+                <div className="text-center">
+                  <Link 
+                    to="/digestive-system" 
+                    className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs inline-block"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Blood Sugar System Card */}
+              <div className="bg-white shadow-md rounded-xl p-4">
+                <div className="mx-auto w-16 h-16 rounded-full bg-blue-sky flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-blue-300/30">
+                  <MdBloodtype size={32} />
+                </div>
+                <h3 className="text-lg font-proxima font-bold mb-1 text-center">Blood Sugar System</h3>
+                <p className="text-center mb-2 text-sm">
+                  Disturbances in blood sugar (disglycemia) are consistently involved in chronic disease and metabolic syndrome.
+                </p>
+                <div className="text-center">
+                  <Link 
+                    to="/blood-sugar" 
+                    className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs inline-block"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="text-center">
             <p className="text-lg italic mb-8">

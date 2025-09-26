@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const HealthCoachesPage = () => {
@@ -8,7 +8,7 @@ const HealthCoachesPage = () => {
   };
 
   // Function to handle email click
-  const handleEmailClick = (e: React.MouseEvent, encodedEmail: string) => {
+  const handleEmailClick = (e: any, encodedEmail: string) => {
     e.preventDefault();
     const email = decodeEmail(encodedEmail);
     window.location.href = `mailto:${email}`;
@@ -16,15 +16,15 @@ const HealthCoachesPage = () => {
 
   // Coaches data with encoded emails
   const coaches = [
-    { name: 'Pharmacist Ben - Registered Pharmacist', email: 'UGhhcm1hY2lzdEJlbkBkYWlseXdpdGhkb2MuY29t', certification: 'Registered Pharmacist' },
+    { name: 'Pharmacist Ben - Registered Pharmacist', email: 'YmVuQGRhaWx5d2l0aGRvYy5jb20=', certification: 'Registered Pharmacist' },
     { name: 'AJ', email: 'YWpAZGFpbHl3aXRoZG9jLmNvbQ==', certification: 'Certified Wholistic Health Coach' },
-    { name: 'Phyllis Anderson', email: 'UGh5bGxpc0BkYWlseXdpdGhkby5jb20=', certification: 'Certified Wholistic Health Coach' },
+    { name: 'Phyllis Anderson', email: 'cGh5bGxpc0BkYWlseXdpdGhkb2MuY29t', certification: 'Certified Wholistic Health Coach' },
     { name: 'Keeley B', email: 'a2VlbGV5QGRhaWx5d2l0aGRvYy5jb20=', certification: 'Certified Wholistic Health Coach' },
     { name: 'Sheri Browning', email: 'U2hlcmlAZGFpbHl3aXRoZG9jLmNvbQ==', certification: 'Certified Wholistic Health Coach' },
     { name: 'Becca Dukes - Certified Naturopathic Practitioner', email: 'YmVjY2FAZGFpbHl3aXRoZG9jLmNvbQ==', certification: 'Certified Naturopathic Practitioner' },
     { name: 'Lorna Jones', email: 'bG9ybmFAZGFpbHl3aXRoZG9jLmNvbQ==', certification: 'Certified Wholistic Health Coach' },
     { name: 'Albert Leenderts', email: 'YWxiZXJ0QGRhaWx5d2l0aGRvYy5jb20=', certification: 'Certified Wholistic Health Coach' },
-    { name: 'Mary McWhorter', email: 'bWFyeUBkYWlseXdpdGhkby5jb20=', certification: 'Certified Wholistic Health Coach' },
+    { name: 'Mary McWhorter', email: 'bWFyeUBkYWlseXdpdGhkb2MuY29t', certification: 'Certified Wholistic Health Coach' },
     { name: 'Marilyn Pazera-Spear', email: 'bWFyaWx5bkBkYWlseXdpdGhkby5jb20=', certification: 'Certified Wholistic Health Coach' },
     { name: 'Ruthellen Sanchez', email: 'cnV0aGVsbGVuQGRhaWx5d2l0aGRvYy5jb20=', certification: 'Certified Wholistic Health Coach' },
     { name: 'Coach Rod Wiggins', email: 'cm9kQGRhaWx5d2l0aGRvYy5jb20=', certification: 'Certified Wholistic Health Coach' },
@@ -70,11 +70,7 @@ const HealthCoachesPage = () => {
                         <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                       </svg>
                       <span className="border-b border-transparent group-hover:border-health-blue">
-                        Contact {
-                          coach.name.includes('Pharmacist Ben') ? 'Ben' :
-                          coach.name.includes('Becca Dukes') ? 'Becca' :
-                          coach.name.split(' ')[0]
-                        }
+                        Contact {coach.name.includes('Pharmacist Ben') ? 'Ben' : coach.name.includes('Becca Dukes') ? 'Becca' : coach.name.includes('Coach Rod') ? 'Rod' : coach.name.split(' ')[0] || coach.name}
                       </span>
                     </button>
                   </div>
