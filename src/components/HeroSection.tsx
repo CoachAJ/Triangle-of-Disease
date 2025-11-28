@@ -20,7 +20,7 @@ const HeroSection = ({
   showTriangle = false,
 }: HeroSectionProps) => {
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <section className="relative pt-24 pb-20 md:pt-36 md:pb-32 overflow-hidden">
       {/* Background with overlay */}
       {backgroundImage ? (
         <div 
@@ -28,36 +28,50 @@ const HeroSection = ({
           style={{ backgroundImage: `url(${backgroundImage})` }}
         />
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-health-blue via-blue-sky to-glorious-sunset z-0" />
+        <div className="absolute inset-0 bg-gradient-to-br from-health-blue via-blue-sky to-glorious-sunset z-0">
+          {/* Animated background elements */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-tangy-yellow opacity-20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '3s' }}></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-glorious-sunset opacity-20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
+        </div>
       )}
-      <div className="absolute inset-0 bg-health-blue/80 z-10" />
+      <div className="absolute inset-0 bg-health-blue/75 z-10" />
       
       {/* Content */}
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <p className="text-tangy-yellow font-proxima text-lg md:text-xl mb-3">{subtitle}</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-proxima font-bold mb-6">{title}</h1>
-          <p className="text-lg md:text-xl mb-8 text-blue-100">{description}</p>
+          <p className="text-tangy-yellow font-proxima text-xl md:text-2xl mb-4 font-semibold tracking-wide">{subtitle}</p>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-proxima font-bold mb-8 leading-tight">{title}</h1>
+          <p className="text-xl md:text-2xl mb-10 text-blue-100 leading-relaxed">{description}</p>
           
           {buttonText && buttonLink && (
             <Link 
               to={buttonLink} 
-              className="btn bg-glorious-sunset text-white hover:bg-tangy-yellow hover:text-gray-800 transform transition hover:scale-105"
+              className="btn bg-gradient-to-r from-glorious-sunset to-tangy-yellow text-white hover:from-tangy-yellow hover:to-glorious-sunset transform transition hover:scale-110 shadow-2xl text-lg md:text-xl px-12 py-4"
             >
               {buttonText}
             </Link>
           )}
           
           {showTriangle && (
-            <div className="mt-10 max-w-2xl mx-auto" style={{ maxWidth: '500px' }}>
-  <div className="relative w-full" style={{ paddingBottom: '86.6%' }}> {/* Larger triangle aspect ratio */}
-    <svg viewBox="0 0 100 86.6" className="absolute inset-0 w-full h-full" style={{ width: '100%', height: '100%' }}>
-                  {/* Triangle outline */}
+            <div className="mt-16 max-w-2xl mx-auto" style={{ maxWidth: '600px' }}>
+  <div className="relative w-full bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-2xl" style={{ paddingBottom: '86.6%' }}> {/* Larger triangle aspect ratio */}
+    <svg viewBox="0 0 100 86.6" className="absolute inset-0 w-full h-full" style={{ width: '100%', height: '100%', padding: '2rem' }}>
+                  {/* Triangle outline with glow */}
+                  <defs>
+                    <filter id="heroGlow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                      <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                  </defs>
                   <path 
                     d="M50,0 L100,86.6 L0,86.6 Z" 
                     fill="none" 
                     stroke="white" 
-                    strokeWidth="1"
+                    strokeWidth="1.5"
+                    filter="url(#heroGlow)"
                   />
                   
                   {/*
@@ -130,18 +144,18 @@ const HeroSection = ({
                 </svg>
               </div>
               
-              <div className="grid grid-cols-3 gap-4 mt-6 text-center">
-                <Link to="/digestive-system" className="text-white hover:text-tangy-yellow transition-colors">
-                  <span className="block font-bold">Point 1</span>
-                  <span className="text-sm">Digestive System</span>
+              <div className="grid grid-cols-3 gap-6 mt-8 text-center">
+                <Link to="/digestive-system" className="text-white hover:text-tangy-yellow transition-all duration-300 transform hover:scale-110 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20">
+                  <span className="block font-bold text-lg md:text-xl mb-1">Point 1</span>
+                  <span className="text-sm md:text-base">Digestive System</span>
                 </Link>
-                <Link to="/blood-sugar" className="text-white hover:text-tangy-yellow transition-colors">
-                  <span className="block font-bold">Point 2</span>
-                  <span className="text-sm">Blood Sugar</span>
+                <Link to="/blood-sugar" className="text-white hover:text-tangy-yellow transition-all duration-300 transform hover:scale-110 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20">
+                  <span className="block font-bold text-lg md:text-xl mb-1">Point 2</span>
+                  <span className="text-sm md:text-base">Blood Sugar</span>
                 </Link>
-                <Link to="/adrenal-thyroid" className="text-white hover:text-tangy-yellow transition-colors">
-                  <span className="block font-bold">Point 3</span>
-                  <span className="text-sm">Adrenal-Thyroid</span>
+                <Link to="/adrenal-thyroid" className="text-white hover:text-tangy-yellow transition-all duration-300 transform hover:scale-110 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20">
+                  <span className="block font-bold text-lg md:text-xl mb-1">Point 3</span>
+                  <span className="text-sm md:text-base">Adrenal-Thyroid</span>
                 </Link>
               </div>
             </div>

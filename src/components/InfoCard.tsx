@@ -42,16 +42,16 @@ const InfoCard = ({
   const scheme = colorSchemes[color]
 
   return (
-    <div className={`card border ${scheme.border} hover:shadow-lg transition-all duration-300 ${className}`}>
-      <div className={`-mx-6 -mt-6 mb-6 px-6 py-4 flex items-center ${scheme.header}`}>
+    <div className={`card border-2 ${scheme.border} hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${className}`}>
+      <div className={`-mx-6 -mt-6 mb-6 px-6 py-5 flex items-center ${scheme.header} shadow-md`}>
         {icon && (
-          <div className={`mr-3 p-2 rounded-full ${scheme.icon}`}>
+          <div className={`mr-4 p-3 rounded-full ${scheme.icon} shadow-lg text-2xl`}>
             {icon}
           </div>
         )}
-        <h3 className="font-proxima text-xl font-bold">{title}</h3>
+        <h3 className="font-proxima text-2xl font-bold">{title}</h3>
       </div>
-      <div>{children}</div>
+      <div className="text-base leading-relaxed text-gray-700">{children}</div>
     </div>
   )
 }

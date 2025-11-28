@@ -26,50 +26,59 @@ const HomePage = () => {
       />
 
       {/* Introduction Section */}
-      <section className="py-16 bg-gray-50" id="triangle-explanation">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white" id="triangle-explanation">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-health-blue mb-6">Understanding the Triangle of Disease</h2>
-            <p className="text-lg">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-health-blue mb-6 text-4xl md:text-5xl">Understanding the Triangle of Disease</h2>
+            <p className="text-xl text-gray-700 leading-relaxed">
               The Triangle of Disease is a simplified model that explains the fundamental biochemical breakdowns in the body that lead to chronic health issues. By focusing on these three core systems, we can address the root causes rather than just treating symptoms.
             </p>
           </div>
 
           {/* Triangle of Disease Cards - Responsive Layout */}
-          <div className="mb-12">
+          <div className="mb-16">
             {/* Triangle SVG for larger screens only */}
-            <div className="hidden md:block relative" style={{ height: '340px' }}>
+            <div className="hidden md:block relative" style={{ height: '480px' }}>
               <svg
                 width="100%"
-                height="340"
-                viewBox="0 0 420 340"
+                height="480"
+                viewBox="0 0 500 480"
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none"
-                style={{ filter: 'drop-shadow(0 0 40px #3CAADF88)', maxWidth: '420px' }}
+                style={{ filter: 'drop-shadow(0 0 60px #3CAADF66)', maxWidth: '500px' }}
               >
+                <defs>
+                  <linearGradient id="triangleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#FFB81C" stopOpacity="0.4" />
+                    <stop offset="50%" stopColor="#3CAADF" stopOpacity="0.3" />
+                    <stop offset="100%" stopColor="#F58A34" stopOpacity="0.4" />
+                  </linearGradient>
+                </defs>
                 <polygon
-                  points="210,30 40,310 380,310"
-                  fill="none"
+                  points="250,40 50,440 450,440"
+                  fill="url(#triangleGradient)"
                   stroke="#FFB81C"
-                  strokeWidth="10"
+                  strokeWidth="12"
                   strokeLinejoin="round"
-                  opacity="0.25"
+                  opacity="0.5"
+                  className="animate-pulse"
+                  style={{ animationDuration: '4s' }}
                 />
               </svg>
               
               {/* Triangle Points positioned absolutely on larger screens */}
-              <div className="absolute z-10 left-1/2 top-0 -translate-x-1/2" style={{ width: '200px', maxWidth: '90%' }}>
-                <div className="triangle-point bg-white shadow-md hover:shadow-2xl transition-transform duration-300 hover:scale-105 rounded-xl p-4">
-                  <div className="mx-auto w-16 h-16 md:w-20 md:h-20 rounded-full bg-tangy-yellow flex items-center justify-center text-gray-800 mb-2 shadow-lg ring-4 ring-yellow-300/30">
-                    <FaStethoscope size={32} />
+              <div className="absolute z-10 left-1/2 top-0 -translate-x-1/2" style={{ width: '280px', maxWidth: '90%' }}>
+                <div className="triangle-point bg-white shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-2 rounded-2xl p-6 border-2 border-tangy-yellow/20">
+                  <div className="mx-auto w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-tangy-yellow to-yellow-500 flex items-center justify-center text-gray-800 mb-4 shadow-xl ring-4 ring-yellow-300/50 transition-transform duration-300 hover:rotate-12">
+                    <FaStethoscope size={40} />
                   </div>
-                  <h3 className="text-lg font-proxima font-bold mb-1 text-center">Adrenal-Thyroid Complex</h3>
-                  <p className="text-center mb-2 text-xs">
+                  <h3 className="text-xl md:text-2xl font-proxima font-bold mb-3 text-center text-health-blue">Adrenal-Thyroid Complex</h3>
+                  <p className="text-center mb-4 text-sm leading-relaxed text-gray-700">
                     The regulatory hub that influences everything from energy production to hormonal balance and stress response.
                   </p>
                   <div className="text-center">
                     <Link 
                       to="/adrenal-thyroid" 
-                      className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs inline-block"
+                      className="btn py-2 px-6 bg-health-blue text-white hover:bg-blue-sky text-sm inline-block transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
                     >
                       Learn More
                     </Link>
@@ -77,19 +86,19 @@ const HomePage = () => {
                 </div>
               </div>
               
-              <div className="absolute z-10 left-0 bottom-0" style={{ width: '200px', maxWidth: '90%' }}>
-                <div className="triangle-point bg-white shadow-md hover:shadow-2xl transition-transform duration-300 hover:scale-105 rounded-xl p-4">
-                  <div className="mx-auto w-16 h-16 md:w-20 md:h-20 rounded-full bg-glorious-sunset flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-orange-300/30">
-                    <GiStomach size={32} />
+              <div className="absolute z-10 left-0 bottom-0" style={{ width: '280px', maxWidth: '90%' }}>
+                <div className="triangle-point bg-white shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-2 rounded-2xl p-6 border-2 border-glorious-sunset/20">
+                  <div className="mx-auto w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-glorious-sunset to-orange-600 flex items-center justify-center text-white mb-4 shadow-xl ring-4 ring-orange-300/50 transition-transform duration-300 hover:rotate-12">
+                    <GiStomach size={40} />
                   </div>
-                  <h3 className="text-lg font-proxima font-bold mb-1 text-center">Digestive System</h3>
-                  <p className="text-center mb-2 text-xs">
+                  <h3 className="text-xl md:text-2xl font-proxima font-bold mb-3 text-center text-health-blue">Digestive System</h3>
+                  <p className="text-center mb-4 text-sm leading-relaxed text-gray-700">
                     The place where the outside world meets the inside world. Issues here lead to toxicity and malnourishment entering the bloodstream.
                   </p>
                   <div className="text-center">
                     <Link 
                       to="/digestive-system" 
-                      className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs inline-block"
+                      className="btn py-2 px-6 bg-health-blue text-white hover:bg-blue-sky text-sm inline-block transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
                     >
                       Learn More
                     </Link>
@@ -97,19 +106,19 @@ const HomePage = () => {
                 </div>
               </div>
               
-              <div className="absolute z-10 right-0 bottom-0" style={{ width: '200px', maxWidth: '90%' }}>
-                <div className="triangle-point bg-white shadow-md hover:shadow-2xl transition-transform duration-300 hover:scale-105 rounded-xl p-4">
-                  <div className="mx-auto w-16 h-16 md:w-20 md:h-20 rounded-full bg-blue-sky flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-blue-300/30">
-                    <MdBloodtype size={32} />
+              <div className="absolute z-10 right-0 bottom-0" style={{ width: '280px', maxWidth: '90%' }}>
+                <div className="triangle-point bg-white shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-2 rounded-2xl p-6 border-2 border-blue-sky/20">
+                  <div className="mx-auto w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-blue-sky to-blue-600 flex items-center justify-center text-white mb-4 shadow-xl ring-4 ring-blue-300/50 transition-transform duration-300 hover:rotate-12">
+                    <MdBloodtype size={40} />
                   </div>
-                  <h3 className="text-lg font-proxima font-bold mb-1 text-center">Blood Sugar System</h3>
-                  <p className="text-center mb-2 text-xs">
+                  <h3 className="text-xl md:text-2xl font-proxima font-bold mb-3 text-center text-health-blue">Blood Sugar System</h3>
+                  <p className="text-center mb-4 text-sm leading-relaxed text-gray-700">
                     Disturbances in blood sugar (disglycemia) are consistently involved in chronic disease and metabolic syndrome.
                   </p>
                   <div className="text-center">
                     <Link 
                       to="/blood-sugar" 
-                      className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs inline-block"
+                      className="btn py-2 px-6 bg-health-blue text-white hover:bg-blue-sky text-sm inline-block transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
                     >
                       Learn More
                     </Link>
@@ -119,20 +128,20 @@ const HomePage = () => {
             </div>
             
             {/* Mobile-friendly stacked cards */}
-            <div className="md:hidden grid grid-cols-1 gap-6">
+            <div className="md:hidden grid grid-cols-1 gap-8">
               {/* Adrenal-Thyroid Card */}
-              <div className="bg-white shadow-md rounded-xl p-4">
-                <div className="mx-auto w-16 h-16 rounded-full bg-tangy-yellow flex items-center justify-center text-gray-800 mb-2 shadow-lg ring-4 ring-yellow-300/30">
-                  <FaStethoscope size={32} />
+              <div className="bg-white shadow-xl rounded-2xl p-6 border-2 border-tangy-yellow/20 hover:shadow-2xl transition-all duration-300">
+                <div className="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-tangy-yellow to-yellow-500 flex items-center justify-center text-gray-800 mb-4 shadow-xl ring-4 ring-yellow-300/50">
+                  <FaStethoscope size={36} />
                 </div>
-                <h3 className="text-lg font-proxima font-bold mb-1 text-center">Adrenal-Thyroid Complex</h3>
-                <p className="text-center mb-2 text-sm">
+                <h3 className="text-2xl font-proxima font-bold mb-3 text-center text-health-blue">Adrenal-Thyroid Complex</h3>
+                <p className="text-center mb-4 text-base leading-relaxed text-gray-700">
                   The regulatory hub that influences everything from energy production to hormonal balance and stress response.
                 </p>
                 <div className="text-center">
                   <Link 
                     to="/adrenal-thyroid" 
-                    className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs inline-block"
+                    className="btn py-3 px-8 bg-health-blue text-white hover:bg-blue-sky text-base inline-block transform hover:scale-105 transition-all duration-300 shadow-md"
                   >
                     Learn More
                   </Link>
@@ -140,18 +149,18 @@ const HomePage = () => {
               </div>
               
               {/* Digestive System Card */}
-              <div className="bg-white shadow-md rounded-xl p-4">
-                <div className="mx-auto w-16 h-16 rounded-full bg-glorious-sunset flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-orange-300/30">
-                  <GiStomach size={32} />
+              <div className="bg-white shadow-xl rounded-2xl p-6 border-2 border-glorious-sunset/20 hover:shadow-2xl transition-all duration-300">
+                <div className="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-glorious-sunset to-orange-600 flex items-center justify-center text-white mb-4 shadow-xl ring-4 ring-orange-300/50">
+                  <GiStomach size={36} />
                 </div>
-                <h3 className="text-lg font-proxima font-bold mb-1 text-center">Digestive System</h3>
-                <p className="text-center mb-2 text-sm">
+                <h3 className="text-2xl font-proxima font-bold mb-3 text-center text-health-blue">Digestive System</h3>
+                <p className="text-center mb-4 text-base leading-relaxed text-gray-700">
                   The place where the outside world meets the inside world. Issues here lead to toxicity and malnourishment entering the bloodstream.
                 </p>
                 <div className="text-center">
                   <Link 
                     to="/digestive-system" 
-                    className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs inline-block"
+                    className="btn py-3 px-8 bg-health-blue text-white hover:bg-blue-sky text-base inline-block transform hover:scale-105 transition-all duration-300 shadow-md"
                   >
                     Learn More
                   </Link>
@@ -159,18 +168,18 @@ const HomePage = () => {
               </div>
               
               {/* Blood Sugar System Card */}
-              <div className="bg-white shadow-md rounded-xl p-4">
-                <div className="mx-auto w-16 h-16 rounded-full bg-blue-sky flex items-center justify-center text-white mb-2 shadow-lg ring-4 ring-blue-300/30">
-                  <MdBloodtype size={32} />
+              <div className="bg-white shadow-xl rounded-2xl p-6 border-2 border-blue-sky/20 hover:shadow-2xl transition-all duration-300">
+                <div className="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-blue-sky to-blue-600 flex items-center justify-center text-white mb-4 shadow-xl ring-4 ring-blue-300/50">
+                  <MdBloodtype size={36} />
                 </div>
-                <h3 className="text-lg font-proxima font-bold mb-1 text-center">Blood Sugar System</h3>
-                <p className="text-center mb-2 text-sm">
+                <h3 className="text-2xl font-proxima font-bold mb-3 text-center text-health-blue">Blood Sugar System</h3>
+                <p className="text-center mb-4 text-base leading-relaxed text-gray-700">
                   Disturbances in blood sugar (disglycemia) are consistently involved in chronic disease and metabolic syndrome.
                 </p>
                 <div className="text-center">
                   <Link 
                     to="/blood-sugar" 
-                    className="btn py-1 px-3 bg-health-blue text-white hover:bg-blue-sky text-xs inline-block"
+                    className="btn py-3 px-8 bg-health-blue text-white hover:bg-blue-sky text-base inline-block transform hover:scale-105 transition-all duration-300 shadow-md"
                   >
                     Learn More
                   </Link>
@@ -179,13 +188,17 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="text-center">
-            <p className="text-lg italic mb-8">
-              "All chronic and degenerative diseases can be backtracked to the Triangle of Disease. They are not primary conditions, but rather secondary conditions that arise when the fundamental systems break down."
-            </p>
+          <div className="text-center bg-gradient-to-r from-blue-50 via-orange-50 to-yellow-50 rounded-3xl p-8 md:p-12 shadow-lg">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-6xl mb-6 text-tangy-yellow opacity-50">"</div>
+              <p className="text-xl md:text-2xl italic mb-6 text-gray-800 leading-relaxed font-medium">
+                All chronic and degenerative diseases can be backtracked to the Triangle of Disease. They are not primary conditions, but rather secondary conditions that arise when the fundamental systems break down.
+              </p>
+              <div className="h-1 w-24 bg-gradient-to-r from-health-blue via-tangy-yellow to-glorious-sunset mx-auto mb-8 rounded-full"></div>
+            </div>
             <Link 
               to="/health-strategies" 
-              className="btn bg-glorious-sunset text-white hover:bg-tangy-yellow hover:text-gray-800"
+              className="btn bg-gradient-to-r from-glorious-sunset to-tangy-yellow text-white hover:from-tangy-yellow hover:to-glorious-sunset transform hover:scale-105 shadow-xl text-lg px-10 py-4"
             >
               View Health Strategies
             </Link>
@@ -193,11 +206,23 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Decorative Divider */}
+      <div className="relative h-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="flex space-x-2">
+            <div className="w-3 h-3 rounded-full bg-health-blue animate-bounce" style={{ animationDelay: '0s' }}></div>
+            <div className="w-3 h-3 rounded-full bg-tangy-yellow animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+            <div className="w-3 h-3 rounded-full bg-glorious-sunset animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+          </div>
+        </div>
+      </div>
+
       {/* Key Health Challenges Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container-custom">
           <div className="section-title">
-            <h2>How the Triangle Explains Common Health Challenges</h2>
+            <h2 className="text-4xl md:text-5xl mb-4">How the Triangle Explains Common Health Challenges</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Understanding the root causes behind chronic conditions</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -241,10 +266,10 @@ const HomePage = () => {
             </InfoCard>
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Link 
               to="/assessment-tools" 
-              className="btn bg-health-blue text-white hover:bg-blue-sky"
+              className="btn bg-gradient-to-r from-health-blue to-blue-sky text-white hover:from-blue-sky hover:to-health-blue transform hover:scale-105 shadow-xl text-lg px-10 py-4"
             >
               Try Our Assessment Tools
             </Link>
@@ -252,11 +277,19 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Decorative Divider */}
+      <div className="relative h-24 bg-gradient-to-b from-white to-orange-50">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="h-1 w-32 bg-gradient-to-r from-transparent via-glorious-sunset to-transparent rounded-full"></div>
+        </div>
+      </div>
+
       {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-gradient-to-b from-orange-50 via-yellow-50 to-blue-50">
         <div className="container-custom">
           <div className="section-title">
-            <h2>Success Stories</h2>
+            <h2 className="text-4xl md:text-5xl mb-4">Success Stories</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Real people achieving real results with the Triangle of Disease approach</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -281,11 +314,23 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Decorative Divider */}
+      <div className="relative h-24 bg-gradient-to-b from-blue-50 to-white">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="flex space-x-1">
+            {[...Array(5)].map((_, i) => (
+              <div key={i} className="w-2 h-12 bg-gradient-to-b from-blue-sky to-health-blue rounded-full opacity-30" style={{ height: `${(i + 1) * 8}px` }}></div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Symptom Checker */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="section-title">
-            <h2>Identify Your Health Patterns</h2>
+            <h2 className="text-4xl md:text-5xl mb-4">Identify Your Health Patterns</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Discover which points of the Triangle may need your attention</p>
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -295,23 +340,26 @@ const HomePage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-health-blue text-white">
-        <div className="container-custom">
+      <section className="py-20 bg-gradient-to-br from-health-blue via-blue-sky to-health-blue text-white relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-tangy-yellow opacity-10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-glorious-sunset opacity-10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-white mb-6">Take Control of Your Health Today</h2>
-            <p className="text-lg text-blue-100 mb-8">
+            <h2 className="text-white mb-6 text-4xl md:text-5xl font-bold">Take Control of Your Health Today</h2>
+            <p className="text-xl text-blue-100 mb-10 leading-relaxed">
               By understanding the Triangle of Disease, you have more power over your body's biochemistry and health challenges than you might realize. Start your journey to comprehensive health by exploring our resources.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-6">
               <Link 
                 to="/resources" 
-                className="btn bg-white text-health-blue hover:bg-tangy-yellow hover:text-gray-800"
+                className="btn bg-white text-health-blue hover:bg-tangy-yellow hover:text-gray-800 transform hover:scale-105 shadow-xl text-lg px-10 py-4"
               >
                 Explore Resources
               </Link>
               <Link 
                 to="/health-strategies" 
-                className="btn bg-glorious-sunset text-white hover:bg-tangy-yellow hover:text-gray-800"
+                className="btn bg-gradient-to-r from-glorious-sunset to-tangy-yellow text-white hover:from-tangy-yellow hover:to-glorious-sunset transform hover:scale-105 shadow-xl text-lg px-10 py-4"
               >
                 View Health Strategies
               </Link>
