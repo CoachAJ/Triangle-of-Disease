@@ -17,6 +17,10 @@ const HomePage = () => {
   const card3Zoom = useZoomIn(300)
   const quoteZoom = useZoomIn(0)
   const ctaSlide = useSlideUp(100)
+  const healthSlide = useSlideUp(200)
+  const testimonialsSlide = useSlideUp(100)
+  const symptomSlide = useSlideUp(50)
+  const symptomZoom = useZoomIn(100)
   
   return (
     <>
@@ -237,7 +241,7 @@ const HomePage = () => {
         <div className="absolute bottom-10 left-10 w-80 h-80 bg-tangy-yellow/5 rounded-full blur-2xl animate-float" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
         
         <div className="container-custom relative z-10">
-          <div ref={useSlideUp(200).ref as any} className={`section-title mb-10 ${useSlideUp(200).className}`} style={useSlideUp(200).style}>
+          <div ref={healthSlide.ref as any} className={`section-title mb-10 ${healthSlide.className}`} style={healthSlide.style}>
             <h2 className="text-5xl md:text-6xl mb-6 text-gradient-animate font-bold">How the Triangle Explains Common Health Challenges</h2>
             <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto">Understanding the root causes behind chronic conditions</p>
           </div>
@@ -311,7 +315,7 @@ const HomePage = () => {
         </div>
         
         <div className="container-custom relative z-10">
-          <div ref={useSlideUp(100).ref as any} className={`section-title mb-10 ${useSlideUp(100).className}`} style={useSlideUp(100).style}>
+          <div ref={testimonialsSlide.ref as any} className={`section-title mb-10 ${testimonialsSlide.className}`} style={testimonialsSlide.style}>
             <h2 className="text-5xl md:text-6xl mb-6 font-bold">
               <span className="text-gradient-animate">Success Stories</span>
             </h2>
@@ -354,12 +358,12 @@ const HomePage = () => {
       {/* Symptom Checker with Glass Background */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-white to-gray-50 relative">
         <div className="container-custom">
-          <div ref={useSlideUp(50).ref as any} className={`section-title mb-8 ${useSlideUp(50).className}`} style={useSlideUp(50).style}>
+          <div ref={symptomSlide.ref as any} className={`section-title mb-8 ${symptomSlide.className}`} style={symptomSlide.style}>
             <h2 className="text-5xl md:text-6xl mb-6 font-bold text-gradient-animate">Identify Your Health Patterns</h2>
             <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto">Discover which points of the Triangle may need your attention</p>
           </div>
 
-          <div ref={useZoomIn(100).ref as any} className={`max-w-4xl mx-auto ${useZoomIn(100).className}`} style={useZoomIn(100).style}>
+          <div ref={symptomZoom.ref as any} className={`max-w-4xl mx-auto ${symptomZoom.className}`} style={symptomZoom.style}>
             <div className="glass-dark p-8 rounded-3xl shadow-2xl">
               <SymptomChecker />
             </div>
