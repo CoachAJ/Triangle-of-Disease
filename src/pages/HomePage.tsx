@@ -37,13 +37,13 @@ const HomePage = () => {
       />
 
       {/* Introduction Section with Glass Effect */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50/30 to-white relative" id="triangle-explanation">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-white relative" id="triangle-explanation">
         {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-sky/10 rounded-full blur-3xl animate-morph"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-tangy-yellow/10 rounded-full blur-3xl animate-morph" style={{ animationDelay: '4s' }}></div>
         
         <div className="container-custom relative z-10">
-          <div ref={introSlide.ref as any} className={`max-w-3xl mx-auto text-center mb-20 ${introSlide.className}`} style={introSlide.style}>
+          <div ref={introSlide.ref as any} className={`max-w-3xl mx-auto text-center mb-12 ${introSlide.className}`} style={introSlide.style}>
             <h2 className="mb-8 text-5xl md:text-6xl font-bold text-gradient-animate">Understanding the Triangle of Disease</h2>
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
               The Triangle of Disease is a simplified model that explains the fundamental biochemical breakdowns in the body that lead to chronic health issues. By focusing on these three core systems, we can address the root causes rather than just treating symptoms.
@@ -51,9 +51,9 @@ const HomePage = () => {
           </div>
 
           {/* Triangle of Disease Cards - Enhanced 3D Layout */}
-          <div className="mb-20" style={{ perspective: '1000px' }}>
+          <div className="mb-12" style={{ perspective: '1000px' }}>
             {/* Triangle SVG for larger screens with 3D effect */}
-            <div className="hidden md:flex justify-center items-center relative card-3d" style={{ height: '520px', marginTop: '60px', marginBottom: '60px' }}>
+            <div className="hidden md:flex justify-center items-center relative card-3d" style={{ height: '520px', marginTop: '40px', marginBottom: '40px' }}>
               {/* SVG Triangle Container with glow effect */}
               <svg className="absolute animate-glow-pulse" viewBox="0 0 500 480" style={{ width: '520px', height: '500px', filter: 'drop-shadow(0 0 30px rgba(60, 170, 223, 0.3))' }}>
                 {/* Advanced Gradient Fill Triangle with Animation */}
@@ -200,7 +200,7 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div ref={quoteZoom.ref as any} className={`text-center glass bg-gradient-to-r from-blue-50/50 via-orange-50/50 to-yellow-50/50 rounded-3xl p-10 md:p-14 shadow-2xl hover:shadow-[0_30px_80px_-15px_rgba(245,138,52,0.4)] transition-all duration-700 ${quoteZoom.className}`} style={{ ...quoteZoom.style, backdropFilter: 'blur(12px)' }}>
+          <div ref={quoteZoom.ref as any} className={`text-center glass bg-gradient-to-r from-blue-50/50 via-orange-50/50 to-yellow-50/50 rounded-3xl p-8 md:p-12 shadow-2xl hover:shadow-[0_30px_80px_-15px_rgba(245,138,52,0.4)] transition-all duration-700 ${quoteZoom.className}`} style={{ ...quoteZoom.style, backdropFilter: 'blur(12px)' }}>
             <div className="max-w-3xl mx-auto relative">
               <div className="absolute -top-8 -left-8 text-8xl text-tangy-yellow/30 font-serif rotate-12 animate-pulse">"</div>
               <p className="text-2xl md:text-3xl italic mb-8 text-gray-900 leading-relaxed font-light relative z-10">
@@ -220,7 +220,7 @@ const HomePage = () => {
       </section>
 
       {/* Decorative Divider */}
-      <div className="relative h-24 bg-gradient-to-b from-white to-gray-50">
+      <div className="relative h-12 md:h-16 bg-gradient-to-b from-white to-gray-50">
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="flex space-x-2">
             <div className="w-3 h-3 rounded-full bg-health-blue animate-bounce" style={{ animationDelay: '0s' }}></div>
@@ -231,13 +231,13 @@ const HomePage = () => {
       </div>
 
       {/* Key Health Challenges Section with Parallax */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50/20 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50/20 relative overflow-hidden">
         {/* Parallax background elements */}
         <div className="absolute top-10 right-10 w-64 h-64 bg-health-blue/5 rounded-full blur-2xl animate-float" style={{ animationDuration: '8s' }}></div>
         <div className="absolute bottom-10 left-10 w-80 h-80 bg-tangy-yellow/5 rounded-full blur-2xl animate-float" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
         
         <div className="container-custom relative z-10">
-          <div ref={useSlideUp(200).ref as any} className={`section-title mb-16 ${useSlideUp(200).className}`} style={useSlideUp(200).style}>
+          <div ref={useSlideUp(200).ref as any} className={`section-title mb-10 ${useSlideUp(200).className}`} style={useSlideUp(200).style}>
             <h2 className="text-5xl md:text-6xl mb-6 text-gradient-animate font-bold">How the Triangle Explains Common Health Challenges</h2>
             <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto">Understanding the root causes behind chronic conditions</p>
           </div>
@@ -283,7 +283,7 @@ const HomePage = () => {
             </InfoCard>
           </div>
 
-          <div className="text-center mt-20">
+          <div className="text-center mt-12">
             <Link 
               to="/assessment-tools" 
               className="btn bg-gradient-to-r from-health-blue to-blue-sky text-white hover:from-blue-sky hover:to-health-blue transform hover:scale-110 shadow-2xl text-xl px-12 py-5 inline-flex items-center gap-3 group animate-bounce-in">
@@ -296,14 +296,14 @@ const HomePage = () => {
       </section>
 
       {/* Decorative Divider */}
-      <div className="relative h-24 bg-gradient-to-b from-white to-orange-50">
+      <div className="relative h-12 md:h-16 bg-gradient-to-b from-white to-orange-50">
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="h-1 w-32 bg-gradient-to-r from-transparent via-glorious-sunset to-transparent rounded-full"></div>
         </div>
       </div>
 
       {/* Testimonials Section with 3D Cards */}
-      <section className="py-24 bg-gradient-to-br from-orange-50/70 via-yellow-50/70 to-blue-50/70 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-orange-50/70 via-yellow-50/70 to-blue-50/70 relative overflow-hidden">
         {/* Animated background patterns */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-tangy-yellow/10 to-glorious-sunset/10 rounded-full blur-3xl animate-morph"></div>
@@ -311,7 +311,7 @@ const HomePage = () => {
         </div>
         
         <div className="container-custom relative z-10">
-          <div ref={useSlideUp(100).ref as any} className={`section-title mb-16 ${useSlideUp(100).className}`} style={useSlideUp(100).style}>
+          <div ref={useSlideUp(100).ref as any} className={`section-title mb-10 ${useSlideUp(100).className}`} style={useSlideUp(100).style}>
             <h2 className="text-5xl md:text-6xl mb-6 font-bold">
               <span className="text-gradient-animate">Success Stories</span>
             </h2>
@@ -341,7 +341,7 @@ const HomePage = () => {
       </section>
 
       {/* Decorative Divider */}
-      <div className="relative h-24 bg-gradient-to-b from-blue-50 to-white">
+      <div className="relative h-12 md:h-16 bg-gradient-to-b from-blue-50 to-white">
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="flex space-x-1">
             {[...Array(5)].map((_, i) => (
@@ -352,9 +352,9 @@ const HomePage = () => {
       </div>
 
       {/* Symptom Checker with Glass Background */}
-      <section className="py-24 bg-gradient-to-br from-white to-gray-50 relative">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-white to-gray-50 relative">
         <div className="container-custom">
-          <div ref={useSlideUp(50).ref as any} className={`section-title mb-12 ${useSlideUp(50).className}`} style={useSlideUp(50).style}>
+          <div ref={useSlideUp(50).ref as any} className={`section-title mb-8 ${useSlideUp(50).className}`} style={useSlideUp(50).style}>
             <h2 className="text-5xl md:text-6xl mb-6 font-bold text-gradient-animate">Identify Your Health Patterns</h2>
             <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto">Discover which points of the Triangle may need your attention</p>
           </div>
@@ -368,7 +368,7 @@ const HomePage = () => {
       </section>
 
       {/* Call to Action with Advanced Effects */}
-      <section className="py-28 bg-gradient-to-br from-health-blue via-blue-sky to-health-blue text-white relative overflow-hidden">
+      <section className="py-20 md:py-24 bg-gradient-to-br from-health-blue via-blue-sky to-health-blue text-white relative overflow-hidden">
         {/* Animated decorative elements */}
         <div className="absolute top-0 left-0 w-80 h-80 bg-tangy-yellow opacity-20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-float" style={{ animationDuration: '6s' }}></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-glorious-sunset opacity-20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 animate-float" style={{ animationDuration: '8s', animationDelay: '2s' }}></div>
@@ -377,7 +377,7 @@ const HomePage = () => {
         <div className="container-custom relative z-10">
           <div ref={ctaSlide.ref as any} className={`max-w-3xl mx-auto text-center ${ctaSlide.className}`} style={ctaSlide.style}>
             <h2 className="text-white mb-8 text-5xl md:text-6xl lg:text-7xl font-bold animate-glow-pulse">Take Control of Your Health Today</h2>
-            <p className="text-2xl md:text-3xl text-blue-100 mb-14 leading-relaxed font-light">
+            <p className="text-2xl md:text-3xl text-blue-100 mb-10 leading-relaxed font-light">
               By understanding the Triangle of Disease, you have more power over your body's biochemistry and health challenges than you might realize. Start your journey to comprehensive health by exploring our resources.
             </p>
             <div className="flex flex-wrap justify-center gap-8">
