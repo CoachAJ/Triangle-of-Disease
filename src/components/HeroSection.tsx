@@ -98,7 +98,7 @@ const HeroSection = ({
                       className="cursor-pointer transition-all duration-300"
                       onMouseEnter={() => setHoveredNode('digestive')}
                       onMouseLeave={() => setHoveredNode(null)}
-                      transform={hoveredNode === 'digestive' ? 'scale(1.15) translate(-2.5, -6.5)' : 'scale(1) translate(0, 0)'}
+                      transform={hoveredNode === 'digestive' ? 'scale(1.1)' : 'scale(1)'}
                     >
                       <radialGradient id="digestiveGradient" cx="50%" cy="50%" r="50%">
                         <stop offset="0%" stopColor="#FFD6B3" stopOpacity="0.9" />
@@ -108,20 +108,15 @@ const HeroSection = ({
                       <circle cx="15" cy="76.6" r="16" fill="white" opacity="0.1" filter="url(#glass)" />
                       <circle cx="15" cy="76.6" r="15" fill="url(#digestiveGradient)" filter="url(#shadowSoft)" opacity="0.95" />
                       {/* Icon */}
-                      <foreignObject x="5" y="70.6" width="20" height="12">
+                      <foreignObject x="9" y="71.6" width="12" height="10">
                         <div className="flex items-center justify-center h-full">
-                          <FaTint className="text-white drop-shadow-md" style={{ fontSize: '8px' }} />
+                          <FaTint className="text-white drop-shadow-lg" style={{ fontSize: '12px' }} />
                         </div>
                       </foreignObject>
-                      {/* Hover tooltip */}
-                      {hoveredNode === 'digestive' && (
-                        <foreignObject x="-10" y="55" width="50" height="20">
-                          <div className="bg-black/80 text-white text-xs px-2 py-1 rounded-lg backdrop-blur-md">
-                            <p className="font-semibold">Gut Health</p>
-                            <p className="text-xs opacity-90">Nutrient absorption & immunity</p>
-                          </div>
-                        </foreignObject>
-                      )}
+                      {/* Text label */}
+                      <text x="15" y="94" textAnchor="middle" fill="white" fontSize="3" fontWeight="600" className="tracking-wide">
+                        DIGESTIVE
+                      </text>
                     </g>
                   </Link>
                   {/* Blood Sugar System (Bottom Right) */}
@@ -130,7 +125,7 @@ const HeroSection = ({
                       className="cursor-pointer transition-all duration-300"
                       onMouseEnter={() => setHoveredNode('bloodSugar')}
                       onMouseLeave={() => setHoveredNode(null)}
-                      transform={hoveredNode === 'bloodSugar' ? 'scale(1.15) translate(2.5, -6.5)' : 'scale(1) translate(0, 0)'}
+                      transform={hoveredNode === 'bloodSugar' ? 'scale(1.1)' : 'scale(1)'}
                     >
                       <radialGradient id="bloodSugarGradient" cx="50%" cy="50%" r="50%">
                         <stop offset="0%" stopColor="#D8F1FF" stopOpacity="0.9" />
@@ -140,20 +135,15 @@ const HeroSection = ({
                       <circle cx="85" cy="76.6" r="16" fill="white" opacity="0.1" filter="url(#glass)" />
                       <circle cx="85" cy="76.6" r="15" fill="url(#bloodSugarGradient)" filter="url(#shadowSoft)" opacity="0.95" />
                       {/* Icon */}
-                      <foreignObject x="75" y="70.6" width="20" height="12">
+                      <foreignObject x="79" y="71.6" width="12" height="10">
                         <div className="flex items-center justify-center h-full">
-                          <FaBolt className="text-white drop-shadow-md" style={{ fontSize: '8px' }} />
+                          <FaBolt className="text-white drop-shadow-lg" style={{ fontSize: '12px' }} />
                         </div>
                       </foreignObject>
-                      {/* Hover tooltip */}
-                      {hoveredNode === 'bloodSugar' && (
-                        <foreignObject x="60" y="55" width="50" height="20">
-                          <div className="bg-black/80 text-white text-xs px-2 py-1 rounded-lg backdrop-blur-md">
-                            <p className="font-semibold">Energy Balance</p>
-                            <p className="text-xs opacity-90">Metabolism & insulin</p>
-                          </div>
-                        </foreignObject>
-                      )}
+                      {/* Text label */}
+                      <text x="85" y="94" textAnchor="middle" fill="white" fontSize="3" fontWeight="600" className="tracking-wide">
+                        BLOOD SUGAR
+                      </text>
                     </g>
                   </Link>
                   {/* Adrenal Thyroid Complex (Top) */}
@@ -162,7 +152,7 @@ const HeroSection = ({
                       className="cursor-pointer transition-all duration-300"
                       onMouseEnter={() => setHoveredNode('adrenal')}
                       onMouseLeave={() => setHoveredNode(null)}
-                      transform={hoveredNode === 'adrenal' ? 'scale(1.15) translate(0, -1.5)' : 'scale(1) translate(0, 0)'}
+                      transform={hoveredNode === 'adrenal' ? 'scale(1.1)' : 'scale(1)'}
                     >
                       <radialGradient id="adrenalGradient" cx="50%" cy="50%" r="50%">
                         <stop offset="0%" stopColor="#FFEFAA" stopOpacity="0.9" />
@@ -172,20 +162,18 @@ const HeroSection = ({
                       <circle cx="50" cy="10" r="16" fill="white" opacity="0.1" filter="url(#glass)" />
                       <circle cx="50" cy="10" r="15" fill="url(#adrenalGradient)" filter="url(#shadowSoft)" opacity="0.95" />
                       {/* Icon */}
-                      <foreignObject x="40" y="4" width="20" height="12">
+                      <foreignObject x="44" y="5" width="12" height="10">
                         <div className="flex items-center justify-center h-full">
-                          <FaStethoscope className="text-white drop-shadow-md" style={{ fontSize: '8px' }} />
+                          <FaStethoscope className="text-white drop-shadow-lg" style={{ fontSize: '12px' }} />
                         </div>
                       </foreignObject>
-                      {/* Hover tooltip */}
-                      {hoveredNode === 'adrenal' && (
-                        <foreignObject x="25" y="-10" width="50" height="20">
-                          <div className="bg-black/80 text-white text-xs px-2 py-1 rounded-lg backdrop-blur-md">
-                            <p className="font-semibold">Stress Response</p>
-                            <p className="text-xs opacity-90">Hormones & adaptation</p>
-                          </div>
-                        </foreignObject>
-                      )}
+                      {/* Text labels */}
+                      <text x="50" y="-8" textAnchor="middle" fill="white" fontSize="3" fontWeight="600" className="tracking-wide">
+                        ADRENAL
+                      </text>
+                      <text x="50" y="-4" textAnchor="middle" fill="white" fontSize="3" fontWeight="600" className="tracking-wide">
+                        THYROID
+                      </text>
                     </g>
                   </Link>
                   {/* SVG Drop Shadow & Glow Filters */}
