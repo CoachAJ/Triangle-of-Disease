@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom'
+import { FaStethoscope, FaBolt } from 'react-icons/fa'
+import { FaTint } from 'react-icons/fa'
+import { useState } from 'react'
 
 interface HeroSectionProps {
   title: string
@@ -19,6 +22,7 @@ const HeroSection = ({
   backgroundImage,
   showTriangle = false,
 }: HeroSectionProps) => {
+  const [hoveredNode, setHoveredNode] = useState<string | null>(null)
   return (
     <section className="relative pt-24 pb-20 md:pt-36 md:pb-32 overflow-hidden">
       {/* Background with overlay */}
@@ -56,7 +60,7 @@ const HeroSection = ({
             <div className="mt-16 max-w-2xl mx-auto" style={{ maxWidth: '600px' }}>
   <div className="relative w-full bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-2xl" style={{ paddingBottom: '86.6%' }}> {/* Larger triangle aspect ratio */}
     <svg viewBox="0 0 100 86.6" className="absolute inset-0 w-full h-full" style={{ width: '100%', height: '100%', padding: '2rem' }}>
-                  {/* Triangle outline with glow */}
+                  {/* Triangle outline with glow and glassmorphism filters */}
                   <defs>
                     <filter id="heroGlow" x="-50%" y="-50%" width="200%" height="200%">
                       <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
@@ -64,6 +68,13 @@ const HeroSection = ({
                         <feMergeNode in="coloredBlur"/>
                         <feMergeNode in="SourceGraphic"/>
                       </feMerge>
+                    </filter>
+                    {/* Glassmorphism filter */}
+                    <filter id="glass" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.1 0"/>
+                      <feBlend mode="normal" in="SourceGraphic" result="glassEffect"/>
+                      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-opacity="0.25"/>
                     </filter>
                   </defs>
                   <path 
@@ -82,47 +93,101 @@ const HeroSection = ({
                     Visual layout does not match point numbers for clinical logic reasons.
                   */}
                   {/* Digestive System (Bottom Left) */}
-                  <g className="cursor-pointer hover:opacity-95 transition-opacity">
-                    <radialGradient id="digestiveGradient" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="#FFD6B3" />
-                      <stop offset="100%" stopColor="#F58A34" />
-                    </radialGradient>
-                    <circle cx="15" cy="76.6" r="15" fill="url(#digestiveGradient)" filter="url(#shadowSoft)" />
-                    <text x="15" y="80" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="2.8" fontWeight="bold" style={{ letterSpacing: 0.2 }}>
-                      DIGESTIVE
-                    </text>
-                    <text x="15" y="84" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="2.8" fontWeight="bold" style={{ letterSpacing: 0.2 }}>
-                      SYSTEM
-                    </text>
-                  </g>
+                  <Link to="/digestive-system">
+                    <g 
+                      className="cursor-pointer transition-all duration-300"
+                      onMouseEnter={() => setHoveredNode('digestive')}
+                      onMouseLeave={() => setHoveredNode(null)}
+                      transform={hoveredNode === 'digestive' ? 'scale(1.15) translate(-2.5, -6.5)' : 'scale(1) translate(0, 0)'}
+                    >
+                      <radialGradient id="digestiveGradient" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="#FFD6B3" stopOpacity="0.9" />
+                        <stop offset="100%" stopColor="#F58A34" stopOpacity="0.95" />
+                      </radialGradient>
+                      {/* Glassmorphism background */}
+                      <circle cx="15" cy="76.6" r="16" fill="white" opacity="0.1" filter="url(#glass)" />
+                      <circle cx="15" cy="76.6" r="15" fill="url(#digestiveGradient)" filter="url(#shadowSoft)" opacity="0.95" />
+                      {/* Icon */}
+                      <foreignObject x="5" y="70.6" width="20" height="12">
+                        <div className="flex items-center justify-center h-full">
+                          <FaTint className="text-white drop-shadow-md" style={{ fontSize: '8px' }} />
+                        </div>
+                      </foreignObject>
+                      {/* Hover tooltip */}
+                      {hoveredNode === 'digestive' && (
+                        <foreignObject x="-10" y="55" width="50" height="20">
+                          <div className="bg-black/80 text-white text-xs px-2 py-1 rounded-lg backdrop-blur-md">
+                            <p className="font-semibold">Gut Health</p>
+                            <p className="text-xs opacity-90">Nutrient absorption & immunity</p>
+                          </div>
+                        </foreignObject>
+                      )}
+                    </g>
+                  </Link>
                   {/* Blood Sugar System (Bottom Right) */}
-                  <g className="cursor-pointer hover:opacity-95 transition-opacity">
-                    <radialGradient id="bloodSugarGradient" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="#D8F1FF" />
-                      <stop offset="100%" stopColor="#3CAADF" />
-                    </radialGradient>
-                    <circle cx="85" cy="76.6" r="15" fill="url(#bloodSugarGradient)" filter="url(#shadowSoft)" />
-                    <text x="85" y="80" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="2.8" fontWeight="bold" style={{ letterSpacing: 0.2 }}>
-                      BLOOD SUGAR
-                    </text>
-                    <text x="85" y="84" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="2.8" fontWeight="bold" style={{ letterSpacing: 0.2 }}>
-                      SYSTEM
-                    </text>
-                  </g>
+                  <Link to="/blood-sugar">
+                    <g 
+                      className="cursor-pointer transition-all duration-300"
+                      onMouseEnter={() => setHoveredNode('bloodSugar')}
+                      onMouseLeave={() => setHoveredNode(null)}
+                      transform={hoveredNode === 'bloodSugar' ? 'scale(1.15) translate(2.5, -6.5)' : 'scale(1) translate(0, 0)'}
+                    >
+                      <radialGradient id="bloodSugarGradient" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="#D8F1FF" stopOpacity="0.9" />
+                        <stop offset="100%" stopColor="#3CAADF" stopOpacity="0.95" />
+                      </radialGradient>
+                      {/* Glassmorphism background */}
+                      <circle cx="85" cy="76.6" r="16" fill="white" opacity="0.1" filter="url(#glass)" />
+                      <circle cx="85" cy="76.6" r="15" fill="url(#bloodSugarGradient)" filter="url(#shadowSoft)" opacity="0.95" />
+                      {/* Icon */}
+                      <foreignObject x="75" y="70.6" width="20" height="12">
+                        <div className="flex items-center justify-center h-full">
+                          <FaBolt className="text-white drop-shadow-md" style={{ fontSize: '8px' }} />
+                        </div>
+                      </foreignObject>
+                      {/* Hover tooltip */}
+                      {hoveredNode === 'bloodSugar' && (
+                        <foreignObject x="60" y="55" width="50" height="20">
+                          <div className="bg-black/80 text-white text-xs px-2 py-1 rounded-lg backdrop-blur-md">
+                            <p className="font-semibold">Energy Balance</p>
+                            <p className="text-xs opacity-90">Metabolism & insulin</p>
+                          </div>
+                        </foreignObject>
+                      )}
+                    </g>
+                  </Link>
                   {/* Adrenal Thyroid Complex (Top) */}
-                  <g className="cursor-pointer hover:opacity-95 transition-opacity">
-                    <radialGradient id="adrenalGradient" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="#FFEFAA" />
-                      <stop offset="100%" stopColor="#FFB81C" />
-                    </radialGradient>
-                    <circle cx="50" cy="10" r="15" fill="url(#adrenalGradient)" filter="url(#shadowSoft)" />
-                    <text x="50" y="14" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="2.8" fontWeight="bold" style={{ letterSpacing: 0.2 }}>
-                      ADRENAL
-                    </text>
-                    <text x="50" y="18" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="2.8" fontWeight="bold" style={{ letterSpacing: 0.2 }}>
-                      THYROID
-                    </text>
-                  </g>
+                  <Link to="/adrenal-thyroid">
+                    <g 
+                      className="cursor-pointer transition-all duration-300"
+                      onMouseEnter={() => setHoveredNode('adrenal')}
+                      onMouseLeave={() => setHoveredNode(null)}
+                      transform={hoveredNode === 'adrenal' ? 'scale(1.15) translate(0, -1.5)' : 'scale(1) translate(0, 0)'}
+                    >
+                      <radialGradient id="adrenalGradient" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="#FFEFAA" stopOpacity="0.9" />
+                        <stop offset="100%" stopColor="#FFB81C" stopOpacity="0.95" />
+                      </radialGradient>
+                      {/* Glassmorphism background */}
+                      <circle cx="50" cy="10" r="16" fill="white" opacity="0.1" filter="url(#glass)" />
+                      <circle cx="50" cy="10" r="15" fill="url(#adrenalGradient)" filter="url(#shadowSoft)" opacity="0.95" />
+                      {/* Icon */}
+                      <foreignObject x="40" y="4" width="20" height="12">
+                        <div className="flex items-center justify-center h-full">
+                          <FaStethoscope className="text-white drop-shadow-md" style={{ fontSize: '8px' }} />
+                        </div>
+                      </foreignObject>
+                      {/* Hover tooltip */}
+                      {hoveredNode === 'adrenal' && (
+                        <foreignObject x="25" y="-10" width="50" height="20">
+                          <div className="bg-black/80 text-white text-xs px-2 py-1 rounded-lg backdrop-blur-md">
+                            <p className="font-semibold">Stress Response</p>
+                            <p className="text-xs opacity-90">Hormones & adaptation</p>
+                          </div>
+                        </foreignObject>
+                      )}
+                    </g>
+                  </Link>
                   {/* SVG Drop Shadow & Glow Filters */}
                   <defs>
                     <filter id="shadowSoft" x="-30%" y="-30%" width="160%" height="160%">
@@ -137,10 +202,36 @@ const HeroSection = ({
                     </filter>
                   </defs>
                   
-                  {/* Connecting lines with glow */}
-                  <line x1="50" y1="25" x2="15" y2="61.6" stroke="white" strokeWidth="2.5" strokeDasharray="6" filter="url(#glow)" />
-                  <line x1="50" y1="25" x2="85" y2="61.6" stroke="white" strokeWidth="2.5" strokeDasharray="6" filter="url(#glow)" />
-                  <line x1="15" y1="61.6" x2="85" y2="61.6" stroke="white" strokeWidth="2.5" strokeDasharray="6" filter="url(#glow)" />
+                  {/* Animated connecting lines with pulse effect */}
+                  <g className="animate-pulse" style={{ animationDuration: '3s' }}>
+                    <line x1="50" y1="25" x2="15" y2="61.6" 
+                      stroke="white" 
+                      strokeWidth={hoveredNode === 'adrenal' || hoveredNode === 'digestive' ? "3" : "2.5"} 
+                      strokeDasharray="4 2" 
+                      filter="url(#glow)"
+                      opacity={hoveredNode === 'adrenal' || hoveredNode === 'digestive' ? "1" : "0.8"}
+                    >
+                      <animate attributeName="stroke-dashoffset" values="0;12" dur="2s" repeatCount="indefinite" />
+                    </line>
+                    <line x1="50" y1="25" x2="85" y2="61.6" 
+                      stroke="white" 
+                      strokeWidth={hoveredNode === 'adrenal' || hoveredNode === 'bloodSugar' ? "3" : "2.5"} 
+                      strokeDasharray="4 2" 
+                      filter="url(#glow)"
+                      opacity={hoveredNode === 'adrenal' || hoveredNode === 'bloodSugar' ? "1" : "0.8"}
+                    >
+                      <animate attributeName="stroke-dashoffset" values="0;12" dur="2s" repeatCount="indefinite" />
+                    </line>
+                    <line x1="15" y1="61.6" x2="85" y2="61.6" 
+                      stroke="white" 
+                      strokeWidth={hoveredNode === 'digestive' || hoveredNode === 'bloodSugar' ? "3" : "2.5"} 
+                      strokeDasharray="4 2" 
+                      filter="url(#glow)"
+                      opacity={hoveredNode === 'digestive' || hoveredNode === 'bloodSugar' ? "1" : "0.8"}
+                    >
+                      <animate attributeName="stroke-dashoffset" values="0;12" dur="2s" repeatCount="indefinite" />
+                    </line>
+                  </g>
                 </svg>
               </div>
               
