@@ -1,9 +1,18 @@
 # Netlify redirects file
 
+# Subdomain Redirects for Triangle of Disease Affiliates
+https://rod.triangleofdisease.com/* https://triangleofdisease.com/?uid=101935822 301!
+https://coachrodw.triangleofdisease.com/* https://triangleofdisease.com/?uid=102487778 301!
+https://albert.triangleofdisease.com/* https://triangleofdisease.com/?uid=102723087 301!
+https://keeley.triangleofdisease.com/* https://triangleofdisease.com/?uid=102777143 301!
+https://lorna.triangleofdisease.com/* https://triangleofdisease.com/?uid=102801894 301!
+https://marilyn.triangleofdisease.com/* https://triangleofdisease.com/?uid=102489445 301!
+https://mary.triangleofdisease.com/* https://triangleofdisease.com/?uid=102807573 301!
+https://phyllis.triangleofdisease.com/* https://triangleofdisease.com/?uid=101499930 301!
+https://pop.triangleofdisease.com/* https://triangleofdisease.com/?uid=101935822 301!
+https://ruthellen.triangleofdisease.com/* https://triangleofdisease.com/?uid=102707635 301!
+https://sheri.triangleofdisease.com/* https://triangleofdisease.com/?uid=102731242 301!
+https://ben.triangleofdisease.com/* https://triangleofdisease.com/?uid=100506163 301!
 
 # SPA fallback (Single Page Application handling)
 /* /index.html 200
-
-# Optional: Redirect old URLs to new URLs if needed
-# /old-path /new-path 301
-# /legacy/* /new-structure/:splat 301
