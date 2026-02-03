@@ -47,8 +47,8 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm ${
-          isHidden ? '-translate-y-full' : 'shadow-sm'
+        className={`fixed w-full z-50 transition-all duration-300 bg-dark-navy/95 backdrop-blur-md border-b border-cyber-cyan/20 ${
+          isHidden ? '-translate-y-full' : 'shadow-lg shadow-cyber-cyan/10'
         }`}
       >
         <div className="container mx-auto px-4">
@@ -56,17 +56,17 @@ const Header = () => {
             {/* Logo and Branding */}
             <Link to="/" className="flex items-center group">
               <div className="flex items-center">
-                <img
-                  src="/logo-header.png"
-                  alt="Daily with Doc & Becca"
-                  className="h-8 w-auto"
+                <img 
+                  src="/pharmacist-ben-bytes-logo.jpg" 
+                  alt="Pharmacist Ben's Bytes" 
+                  className="w-10 h-10 rounded-full shadow-neon object-cover"
                 />
                 <div className="ml-2">
-                  <div className="font-proxima text-health-blue font-extrabold text-sm leading-tight">
+                  <div className="font-proxima text-white font-extrabold text-sm leading-tight">
                     Triangle of Disease
                   </div>
-                  <div className="text-[10px] text-gray-500 -mt-0.5">
-                    by Daily with Doc & Becca
+                  <div className="text-[10px] text-cyber-cyan -mt-0.5">
+                    by Pharmacist Ben Fuchs
                   </div>
                 </div>
               </div>
@@ -90,10 +90,10 @@ const Header = () => {
                   to={item.to}
                   end={item.to === "/"}
                   className={({ isActive }) =>
-                    `px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors ${
+                    `px-2.5 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
                       isActive
-                        ? "bg-health-blue/10 text-health-blue"
-                        : "text-gray-700 hover:bg-gray-100"
+                        ? "bg-cyber-cyan/20 text-cyber-cyan border border-cyber-cyan/30"
+                        : "text-gray-300 hover:text-cyber-cyan hover:bg-white/5"
                     }`
                   }
                 >
@@ -102,7 +102,7 @@ const Header = () => {
               ))}
               <button
                 onClick={toggleSearch}
-                className="ml-1 p-1.5 text-gray-500 hover:text-health-blue transition-colors rounded-full hover:bg-gray-100"
+                className="ml-1 p-1.5 text-gray-400 hover:text-cyber-cyan transition-colors rounded-full hover:bg-white/10"
                 aria-label="Search"
               >
                 <FaSearch className="w-3.5 h-3.5" />
@@ -113,14 +113,14 @@ const Header = () => {
             <div className="flex items-center lg:hidden">
               <button
                 onClick={toggleSearch}
-                className="p-2 text-gray-500 hover:text-health-blue transition-colors"
+                className="p-2 text-gray-400 hover:text-cyber-cyan transition-colors"
                 aria-label="Search"
               >
                 <FaSearch className="w-4 h-4" />
               </button>
               <button
                 onClick={toggleMenu}
-                className="p-2 text-gray-500 hover:text-health-blue transition-colors"
+                className="p-2 text-gray-400 hover:text-cyber-cyan transition-colors"
                 aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
               >
                 {isMenuOpen ? (
@@ -138,7 +138,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white mt-14 lg:hidden overflow-y-auto">
+        <div className="fixed inset-0 z-40 bg-dark-navy mt-14 lg:hidden overflow-y-auto">
           <div className="container mx-auto px-4 py-2">
             <nav className="flex flex-col space-y-1 py-2">
               {[
@@ -157,10 +157,10 @@ const Header = () => {
                   to={item.to}
                   end={item.to === "/"}
                   className={({ isActive }) =>
-                    `px-4 py-3 text-sm font-medium rounded-md ${
+                    `px-4 py-3 text-sm font-medium rounded-md border border-transparent ${
                       isActive
-                        ? "bg-health-blue/10 text-health-blue"
-                        : "text-gray-700 hover:bg-gray-50"
+                        ? "bg-cyber-cyan/20 text-cyber-cyan border-cyber-cyan/30"
+                        : "text-gray-300 hover:bg-white/5 hover:text-cyber-cyan"
                     }`
                   }
                   onClick={() => setIsMenuOpen(false)}
@@ -175,7 +175,7 @@ const Header = () => {
 
       {/* Search Overlay */}
       {isSearchOpen && (
-        <div className="fixed inset-0 z-50 bg-white/95 backdrop-blur-sm pt-20">
+        <div className="fixed inset-0 z-50 bg-dark-navy/98 backdrop-blur-md pt-20">
           <div className="container mx-auto px-4">
             <form onSubmit={handleSearch} className="max-w-2xl mx-auto">
               <div className="relative">
@@ -185,13 +185,13 @@ const Header = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search the site..."
-                  className="w-full px-5 py-4 text-lg border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-health-blue outline-none bg-transparent"
+                  className="w-full px-5 py-4 text-lg text-white border-0 border-b-2 border-cyber-cyan/30 focus:ring-0 focus:border-cyber-cyan outline-none bg-transparent placeholder-gray-500"
                   autoComplete="off"
                 />
                 <button
                   type="button"
                   onClick={() => setIsSearchOpen(false)}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-gray-400 hover:text-gray-600"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-gray-400 hover:text-cyber-cyan"
                   aria-label="Close search"
                 >
                   <FaTimes className="w-5 h-5" />

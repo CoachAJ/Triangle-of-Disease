@@ -25,32 +25,43 @@ const HeroSection = ({
   const [hoveredNode, setHoveredNode] = useState<string | null>(null)
   return (
     <section className="relative pt-24 pb-20 md:pt-36 md:pb-32 overflow-hidden">
-      {/* Background with overlay */}
+      {/* Dark Tech Background */}
       {backgroundImage ? (
         <div 
           className="absolute inset-0 bg-cover bg-center z-0" 
           style={{ backgroundImage: `url(${backgroundImage})` }}
         />
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-health-blue via-blue-sky to-glorious-sunset z-0">
-          {/* Animated background elements */}
-          <div className="absolute top-20 left-10 w-72 h-72 bg-tangy-yellow opacity-20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '3s' }}></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-glorious-sunset opacity-20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-dark-navy via-tech-blue to-deep-blue z-0">
+          {/* Circuit board pattern overlay */}
+          <div className="absolute inset-0 opacity-10" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300D4FF' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
+          {/* Animated glow orbs */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-cyber-cyan opacity-10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-neon-glow opacity-10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyber-cyan opacity-5 rounded-full blur-3xl"></div>
         </div>
       )}
-      <div className="absolute inset-0 bg-health-blue/75 z-10" />
+      <div className="absolute inset-0 bg-dark-navy/40 z-10" />
       
       {/* Content */}
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <p className="text-tangy-yellow font-proxima text-xl md:text-2xl mb-4 font-semibold tracking-wide">{subtitle}</p>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-proxima font-bold mb-8 leading-tight">{title}</h1>
-          <p className="text-xl md:text-2xl mb-10 text-blue-100 leading-relaxed">{description}</p>
+          {/* Pharmacist Ben Fuchs Attribution */}
+          <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-cyber-cyan/30">
+            <span className="text-cyber-cyan text-sm font-semibold tracking-wider uppercase">A Concept by</span>
+            <span className="text-white font-bold">Pharmacist Ben Fuchs, R.Ph.</span>
+          </div>
+          
+          <p className="text-cyber-cyan font-proxima text-xl md:text-2xl mb-4 font-semibold tracking-wide">{subtitle}</p>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-proxima font-bold mb-8 leading-tight bg-gradient-to-r from-white via-cyber-cyan to-neon-glow bg-clip-text text-transparent">{title}</h1>
+          <p className="text-xl md:text-2xl mb-10 text-gray-300 leading-relaxed">{description}</p>
           
           {buttonText && buttonLink && (
             <Link 
               to={buttonLink} 
-              className="btn bg-gradient-to-r from-glorious-sunset to-tangy-yellow text-white hover:from-tangy-yellow hover:to-glorious-sunset transform transition hover:scale-110 shadow-2xl text-lg md:text-xl px-12 py-4"
+              className="btn bg-gradient-to-r from-cyber-cyan to-neon-glow text-dark-navy font-bold hover:shadow-neon-lg transform transition-all duration-300 hover:scale-105 shadow-neon text-lg md:text-xl px-12 py-4 rounded-xl"
             >
               {buttonText}
             </Link>
@@ -58,7 +69,7 @@ const HeroSection = ({
           
           {showTriangle && (
             <div className="mt-16 max-w-2xl mx-auto" style={{ maxWidth: '600px' }}>
-  <div className="relative w-full bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-2xl" style={{ paddingBottom: '86.6%' }}> {/* Larger triangle aspect ratio */}
+  <div className="relative w-full bg-dark-navy/60 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-cyber-cyan/20" style={{ paddingBottom: '86.6%' }}> {/* Larger triangle aspect ratio */}
     <svg viewBox="0 0 100 86.6" className="absolute inset-0 w-full h-full" style={{ width: '100%', height: '100%', padding: '2rem' }}>
                   {/* Triangle outline with glow and glassmorphism filters */}
                   <defs>
@@ -80,10 +91,17 @@ const HeroSection = ({
                   <path 
                     d="M50,0 L100,86.6 L0,86.6 Z" 
                     fill="none" 
-                    stroke="white" 
-                    strokeWidth="1.5"
+                    stroke="url(#triangleGradient)" 
+                    strokeWidth="2"
                     filter="url(#heroGlow)"
                   />
+                  <defs>
+                    <linearGradient id="triangleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#00D4FF" />
+                      <stop offset="50%" stopColor="#4AEAFF" />
+                      <stop offset="100%" stopColor="#00D4FF" />
+                    </linearGradient>
+                  </defs>
                   
                   {/*
                     Clinical labeling order:
@@ -223,18 +241,18 @@ const HeroSection = ({
                 </svg>
               </div>
               
-              <div className="grid grid-cols-3 gap-6 mt-8 text-center">
-                <Link to="/digestive-system" className="text-white hover:text-tangy-yellow transition-all duration-300 transform hover:scale-110 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20">
-                  <span className="block font-bold text-lg md:text-xl mb-1">Point 1</span>
-                  <span className="text-sm md:text-base">Digestive System</span>
+              <div className="grid grid-cols-3 gap-4 mt-8 text-center">
+                <Link to="/digestive-system" className="group text-white hover:text-cyber-cyan transition-all duration-300 transform hover:scale-105 bg-dark-navy/60 backdrop-blur-sm rounded-xl p-4 border border-cyber-cyan/20 hover:border-cyber-cyan/60 hover:shadow-neon">
+                  <span className="block font-bold text-lg md:text-xl mb-1 text-cyber-cyan">Point 1</span>
+                  <span className="text-sm md:text-base text-gray-300 group-hover:text-white">Digestive System</span>
                 </Link>
-                <Link to="/blood-sugar" className="text-white hover:text-tangy-yellow transition-all duration-300 transform hover:scale-110 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20">
-                  <span className="block font-bold text-lg md:text-xl mb-1">Point 2</span>
-                  <span className="text-sm md:text-base">Blood Sugar</span>
+                <Link to="/blood-sugar" className="group text-white hover:text-cyber-cyan transition-all duration-300 transform hover:scale-105 bg-dark-navy/60 backdrop-blur-sm rounded-xl p-4 border border-cyber-cyan/20 hover:border-cyber-cyan/60 hover:shadow-neon">
+                  <span className="block font-bold text-lg md:text-xl mb-1 text-cyber-cyan">Point 2</span>
+                  <span className="text-sm md:text-base text-gray-300 group-hover:text-white">Blood Sugar</span>
                 </Link>
-                <Link to="/adrenal-thyroid" className="text-white hover:text-tangy-yellow transition-all duration-300 transform hover:scale-110 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20">
-                  <span className="block font-bold text-lg md:text-xl mb-1">Point 3</span>
-                  <span className="text-sm md:text-base">Adrenal-Thyroid</span>
+                <Link to="/adrenal-thyroid" className="group text-white hover:text-cyber-cyan transition-all duration-300 transform hover:scale-105 bg-dark-navy/60 backdrop-blur-sm rounded-xl p-4 border border-cyber-cyan/20 hover:border-cyber-cyan/60 hover:shadow-neon">
+                  <span className="block font-bold text-lg md:text-xl mb-1 text-cyber-cyan">Point 3</span>
+                  <span className="text-sm md:text-base text-gray-300 group-hover:text-white">Adrenal-Thyroid</span>
                 </Link>
               </div>
             </div>

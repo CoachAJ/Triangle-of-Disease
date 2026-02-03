@@ -3,6 +3,7 @@ import { useAffiliateTracking } from '../hooks/useAffiliateTracking';
 
 interface AffiliateContextType {
   affiliateId: string | null;
+  isFromUrl: boolean;
   createDailyWithDocLink: (baseUrl?: string) => string;
   addAffiliateToLink: (url: string) => string;
 }
